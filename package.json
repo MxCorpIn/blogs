@@ -1,0 +1,87 @@
+{
+  "name": "ossium-blog",
+  "version": "0.1.0",
+  "description": "The ossium blog — practical guides, how-tos, and Q&A on open source contribution, GSoC, good first issues, and GitHub workflows.",
+  "author": {
+    "name": "Ossium",
+    "email": "help@ossium.in",
+    "url": "https://ossium.in"
+  },
+  "license": "MIT",
+  "homepage": "https://blog.ossium.in",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MxCorpIn/blogs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MxCorpIn/blogs/issues",
+    "email": "help@ossium.in"
+  },
+  "keywords": [
+    "ossium",
+    "open source",
+    "blog",
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "markdown",
+    "gsoc",
+    "good-first-issue",
+    "contribution-guide",
+    "rss",
+    "seo",
+    "static-site"
+  ],
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "browserslist": [
+    "chrome >= 111",
+    "edge >= 111",
+    "firefox >= 111",
+    "safari >= 16.4",
+    "not dead",
+    "not op_mini all"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.523.0",
+    "next": "15.5.9",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "^16",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.9",
+    "eslint-config-prettier": "^10.1.8",
+    "jsdom": "^25",
+    "prettier": "^3.9.6",
+    "sharp": "^0.35.3",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^3"
+  },
+  "packageManager": "pnpm@11.15.1"
+}
