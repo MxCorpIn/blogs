@@ -117,7 +117,7 @@ export function toFrontmatter(
     ),
     updatedAt: data.updatedAt ? String(data.updatedAt) : undefined,
     author: String(data.author ?? "ossium"),
-    authorUrl: data.authorUrl ? String(data.authorUrl) : undefined,
+    authorUrl: data.authorUrl ? String(data.authorUrl) : "https://ossium.in",
     featured: Boolean(data.featured),
     draft: Boolean(data.draft),
     image: data.image ? String(data.image) : undefined,
