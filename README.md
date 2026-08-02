@@ -26,15 +26,15 @@ A fast, static-friendly blog built with Next.js (App Router) and Tailwind CSS, p
 
 ## Tech stack
 
-| Layer     | Choice                                                                |
-|--------- |---------------------------------------------------------------------- |
-| Framework | [Next.js](https://nextjs.org) 15 (App Router)                        |
-| UI        | [React](https://react.dev) 19 + [Tailwind CSS](https://tailwindcss.com) v4 |
-| Content   | Markdown + YAML frontmatter (`content/posts/`)                       |
-| Rendering | [react-markdown](https://github.com/remarkjs/react-markdown) + [remark-gfm](https://github.com/remarkjs/remark-gfm) |
-| Fonts     | Inter (body), General Sans (headings), JetBrains Mono (code) - loaded from CDN |
-| Language  | TypeScript (strict)                                                   |
-| Package manager | pnpm                                                           |
+| Layer           | Choice                                                                                                              |
+| --------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Framework       | [Next.js](https://nextjs.org) 15 (App Router)                                                                       |
+| UI              | [React](https://react.dev) 19 + [Tailwind CSS](https://tailwindcss.com) v4                                          |
+| Content         | Markdown + YAML frontmatter (`content/posts/`)                                                                      |
+| Rendering       | [react-markdown](https://github.com/remarkjs/react-markdown) + [remark-gfm](https://github.com/remarkjs/remark-gfm) |
+| Fonts           | Inter (body), General Sans (headings), JetBrains Mono (code) - loaded from CDN                                      |
+| Language        | TypeScript (strict)                                                                                                 |
+| Package manager | pnpm                                                                                                                |
 
 ## Getting started
 
@@ -62,8 +62,8 @@ pnpm install
 cp .env.example .env
 ```
 
-| Variable              | Description                                                                                                                 |
-|--------------------- |---------------------------------------------------------------------------------------------------------------------------- |
+| Variable              | Description                                                                                                                                                                                              |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `NEXT_PUBLIC_APP_URL` | Public base URL of the site. Used for canonical URLs, RSS links, sitemap, and OG image URLs. Use `http://localhost:3000` locally and your deployed domain (e.g. `https://blog.ossium.in`) in production. |
 
 See [.env.example](.env.example) for the complete list with inline comments.

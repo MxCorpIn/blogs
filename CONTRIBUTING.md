@@ -50,7 +50,7 @@ Create feature branches from `main`. Use a short, kebab-case name prefixed by it
 kind:
 
 | Kind    | Prefix     | Example                      |
-|------- |---------- |---------------------------- |
+| ------- | ---------- | ---------------------------- |
 | Feature | `feat/`    | `feat/reading-progress-bar`  |
 | Bug fix | `fix/`     | `fix/search-highlight-flash` |
 | Content | `content/` | `content/gsoc-2027-timeline` |
