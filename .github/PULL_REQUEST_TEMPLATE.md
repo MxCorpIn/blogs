@@ -28,7 +28,7 @@ explain the motivation instead.
 - [ ] I read [CONTRIBUTING.md](https://github.com/MxCorpIn/blogs/blob/main/CONTRIBUTING.md)
 - [ ] I branched from `main` and used the naming convention from CONTRIBUTING
 - [ ] My commit messages follow [Conventional Commits](https://www.conventionalcommits.org/)
-- [ ] I ran `pnpm lint`, `pnpm typecheck`, `pnpm format:check`, and `pnpm test` — all pass
+- [ ] I ran `pnpm lint`, `pnpm typecheck`, `pnpm format:check`, and `pnpm test` - all pass
 - [ ] `pnpm build` succeeds
 - [ ] I added/updated tests where practical
 - [ ] For UI changes: I verified the change in both light and dark theme, and included screenshots below

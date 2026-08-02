@@ -8,11 +8,11 @@ keywords: [open source tools, tools for github contributors, pr tracking tool, f
 publishedAt: 2026-05-01
 updatedAt: 2026-07-01
 author: ossium
-image: /demo/oss_landingpage.webp
+ 
 featured: false
 ---
 
-Open source isn’t only about writing code—it’s about **finding work, shipping cleanly, and not losing context** across repositories. Here’s a practical tool stack for contributors in 2026.
+Open source isn’t only about writing code-it’s about **finding work, shipping cleanly, and not losing context** across repositories. Here’s a practical tool stack for contributors in 2026.
 
 ## 1. Git + GitHub (the foundation)
 
@@ -66,18 +66,18 @@ Write clearly. Short updates beat silence.
 - Pre-commit hooks when the repo provides them  
 - Browser devtools / test runners documented in CONTRIBUTING  
 
-Don’t invent a parallel toolchain—match the project.
+Don’t invent a parallel toolchain-match the project.
 
 ## 6. AI assistants (use carefully)
 
-AI can help explain unfamiliar code or draft tests—but:
+AI can help explain unfamiliar code or draft tests-but:
 
 - Never paste secrets  
 - Always run tests yourself  
 - Own the PR; reviewers review *you*  
 - Follow project policies on AI-generated code  
 
-Ossistant on ossium is oriented toward open source workflows and discovery context—not replacing maintainers.
+Ossistant on ossium is oriented toward open source workflows and discovery context-not replacing maintainers.
 
 ## Suggested starter stack
 
@@ -92,4 +92,4 @@ Ossistant on ossium is oriented toward open source workflows and discovery conte
 - Read [how to find projects](/how-to-find-open-source-projects-for-beginners)  
 - Browse GSoC organizations  
 
-Tools don’t replace contributions—but the right ones make consistent contribution realistic.
+Tools don’t replace contributions-but the right ones make consistent contribution realistic.

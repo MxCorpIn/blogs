@@ -17,7 +17,7 @@ Themes that show up again and again in this batch: AI systems with real memory, 
 
 ### [NVIDIA Cosmos](https://github.com/NVIDIA/cosmos)
 
-Building blocks for physical AI—simulation-trained world models, robotics/video datasets, and tooling to fine-tune or evaluate them. Aimed at robotics, AV, and embodied systems that need physics, not just pixels.
+Building blocks for physical AI-simulation-trained world models, robotics/video datasets, and tooling to fine-tune or evaluate them. Aimed at robotics, AV, and embodied systems that need physics, not just pixels.
 
 ### [odysseus](https://github.com/pewdiepie-archdaemon/odysseus)
 
@@ -25,11 +25,11 @@ Self-hosted AI workspace for chat, tools, and agents on infrastructure you contr
 
 ### [MemPalace](https://github.com/MemPalace/mempalace)
 
-Persistent memory for AI apps—cross-session recall with an emphasis on benchmarks. Drop-in memory layer instead of inventing your own retrieval stack.
+Persistent memory for AI apps-cross-session recall with an emphasis on benchmarks. Drop-in memory layer instead of inventing your own retrieval stack.
 
 ### [whichllm](https://github.com/Andyyyy64/whichllm)
 
-Recommends which local model will actually run well on *your* hardware using recency-aware, real-world benchmarks—before you download huge weights that won’t fit.
+Recommends which local model will actually run well on *your* hardware using recency-aware, real-world benchmarks-before you download huge weights that won’t fit.
 
 ### [jcode](https://github.com/1jehuang/jcode)
 
@@ -37,11 +37,11 @@ Harness for building coding agents: how they read a repo, act, and report. Scaff
 
 ### [AirLLM](https://github.com/lyogavin/airllm)
 
-Run large open models (toward 70B-class) on consumer GPUs via aggressive memory management—trade speed for accessibility on ~4GB-class setups.
+Run large open models (toward 70B-class) on consumer GPUs via aggressive memory management-trade speed for accessibility on ~4GB-class setups.
 
 ### [ds4](https://github.com/antirez/ds4)
 
-Local inference engine for DeepSeek 4 (Flash/Pro) across Metal, CUDA, and ROCm—from antirez (Redis). Cross-vendor GPU path for those models.
+Local inference engine for DeepSeek 4 (Flash/Pro) across Metal, CUDA, and ROCm-from antirez (Redis). Cross-vendor GPU path for those models.
 
 ### [Valmis](https://github.com/valmishq/valmis)
 
@@ -49,15 +49,15 @@ AI agent stack with security as a first-class concern for teams worried about to
 
 ### [peerd](https://github.com/NotASithLord/peerd)
 
-Browser-native agent harness (Chrome/Firefox extension)—the agent loop runs in the browser against the page you’re looking at.
+Browser-native agent harness (Chrome/Firefox extension)-the agent loop runs in the browser against the page you’re looking at.
 
 ### [agent-native](https://github.com/BuilderIO/agent-native)
 
-Framework for apps designed around agents from day one (Builder.io)—patterns beyond bolting a chatbot onto a classic app.
+Framework for apps designed around agents from day one (Builder.io)-patterns beyond bolting a chatbot onto a classic app.
 
 ### [flue](https://github.com/withastro/flue)
 
-Sandbox agent framework from the Astro team—contain agent actions so mistakes have a limited blast radius.
+Sandbox agent framework from the Astro team-contain agent actions so mistakes have a limited blast radius.
 
 ### [Nubase](https://github.com/OtterMind/Nubase)
 
@@ -65,7 +65,7 @@ AI-native backend platform aimed at turning agent-written code into real apps; s
 
 ### [ktx](https://github.com/Kaelio/ktx)
 
-Executable context layer for data/analytics agents so tools like coding CLIs work with structured, actionable context—not static dumps.
+Executable context layer for data/analytics agents so tools like coding CLIs work with structured, actionable context-not static dumps.
 
 ### [Strix](https://github.com/usestrix/strix)
 
@@ -79,23 +79,23 @@ Peer-to-peer networking: dial by key with QUIC and NAT traversal so apps aren’
 
 ### [pyinfra](https://pyinfra.com/)
 
-Agentless infrastructure automation over SSH in plain Python—fleet changes without YAML-heavy CM or agents everywhere.
+Agentless infrastructure automation over SSH in plain Python-fleet changes without YAML-heavy CM or agents everywhere.
 
 ### [Turso](https://github.com/tursodatabase/turso)
 
-In-process SQL database compatible with SQLite-style workflows—low latency for edge and embedded deployments.
+In-process SQL database compatible with SQLite-style workflows-low latency for edge and embedded deployments.
 
 ### [Firecrawl](https://github.com/firecrawl/firecrawl)
 
-Scraping, search, and page interaction as an API for LLM pipelines and monitoring—less DIY crawler infrastructure.
+Scraping, search, and page interaction as an API for LLM pipelines and monitoring-less DIY crawler infrastructure.
 
 ### [CuPy](https://github.com/cupy/cupy)
 
-NumPy/SciPy-compatible GPU arrays for Python—accelerate numerical code with minimal rewrites.
+NumPy/SciPy-compatible GPU arrays for Python-accelerate numerical code with minimal rewrites.
 
 ### [HelixDB](https://github.com/HelixDB/helix-db)
 
-Graph + vector in one OLTP database (Rust, object storage)—relationships and similarity search without two separate stores.
+Graph + vector in one OLTP database (Rust, object storage)-relationships and similarity search without two separate stores.
 
 ### [textbee](https://github.com/vernu/textbee)
 
@@ -105,7 +105,7 @@ Turn an Android phone into an SMS gateway for low-volume or budget SMS without a
 
 ### [Skybridge](https://github.com/alpic-ai/skybridge)
 
-Full-stack TypeScript framework for MCP Apps and ChatGPT Apps—type-safe, React-friendly scaffolding.
+Full-stack TypeScript framework for MCP Apps and ChatGPT Apps-type-safe, React-friendly scaffolding.
 
 ### [cate](https://github.com/0-AI-UG/cate)
 
@@ -113,7 +113,7 @@ Infinite zoomable canvas IDE: editor, terminal, and browser as spatial panels in
 
 ### [LikeC4](https://github.com/likec4/likec4)
 
-Architecture diagrams generated from code (C4-oriented)—docs that stay closer to the real system.
+Architecture diagrams generated from code (C4-oriented)-docs that stay closer to the real system.
 
 ### [openpencil](https://github.com/ZSeven-W/openpencil)
 
@@ -121,7 +121,7 @@ Open-source AI-native vector design tool, including concurrent agent teams on th
 
 ### [component-party.dev](https://github.com/matschik/component-party.dev)
 
-Side-by-side comparison of web component frameworks—same concepts across syntaxes for evaluation and mental-model translation.
+Side-by-side comparison of web component frameworks-same concepts across syntaxes for evaluation and mental-model translation.
 
 ### [Orval](https://orval.dev/)
 
@@ -137,7 +137,7 @@ Consolidated fast Node.js toolchain to cut the sprawl of many small build/lint u
 
 ### [mitos](https://github.com/oxidecomputer/mitos)
 
-ASCII art for brand assets—CLI banners, README headers, developer-facing identity (Oxide Computer).
+ASCII art for brand assets-CLI banners, README headers, developer-facing identity (Oxide Computer).
 
 ### [Loupe](https://github.com/mysk-research/loupe)
 
@@ -145,7 +145,7 @@ Privacy-focused iOS app that makes app observation/access more concrete for user
 
 ### [extend-hq/ui](https://github.com/extend-hq/ui)
 
-Early UI project listing with sparse public description—worth checking the repo directly if you track Extend’s stack.
+Early UI project listing with sparse public description-worth checking the repo directly if you track Extend’s stack.
 
 ## Patterns worth noticing
 
@@ -155,4 +155,4 @@ Early UI project listing with sparse public description—worth checking the rep
 | Generate from a source of truth | LikeC4, Orval, mitos |
 | Where agents live | Browser (peerd), sandbox (flue), security-first (Valmis), app-native (agent-native) |
 
-Bookmark a few that match a gap you already have—memory, local inference, scraping, or agent harnesses—before the next trending list scrolls past.
+Bookmark a few that match a gap you already have-memory, local inference, scraping, or agent harnesses-before the next trending list scrolls past.

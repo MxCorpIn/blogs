@@ -68,7 +68,7 @@ export function getPostMetaList(): PostMeta[] {
   });
 }
 
-/** Rank posts by shared category, type, and tags — excluding the post itself. */
+/** Rank posts by shared category, type, and tags - excluding the post itself. */
 export function getRelatedPosts(slug: string, limit = 3): PostMeta[] {
   const current = getPostBySlug(slug);
   if (!current) return [];

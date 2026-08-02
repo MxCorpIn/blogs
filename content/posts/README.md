@@ -26,7 +26,7 @@ authorUrl: https://ossium.in
 featured: false
 draft: false
 image: /demo/oss_landingpage.webp
-answerSummary: "Only for type=question — short answer for FAQ rich results."
+answerSummary: "Only for type=question - short answer for FAQ rich results."
 ---
 ```
 

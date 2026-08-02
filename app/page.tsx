@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blog & Guides | ossium",
     description:
-      "Practical guides and Q&A for open source contributors—GSoC, first PRs, issue discovery, and more.",
+      "Practical guides and Q&A for open source contributors-GSoC, first PRs, issue discovery, and more.",
     url: APP_URL,
     siteName: "ossium",
     type: "website",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Blog & Guides | ossium",
     description:
-      "Practical guides and Q&A for open source contributors—GSoC, first PRs, issue discovery, and more.",
+      "Practical guides and Q&A for open source contributors-GSoC, first PRs, issue discovery, and more.",
     images: [`${APP_URL}/demo/oss_landingpage.webp`],
   },
   alternates: {
@@ -57,20 +57,21 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       "max-image-preview": "large",
-      "max-snippet": -1,
+      "max-snippet":-1,
     },
   },
 };
 
 interface BlogPageProps {
-  searchParams: Promise<{ type?: string; category?: string }>;
+  searchParams: Promise<{ type?: string; category?: string; q?: string }>;
 }
 
-/** Blog listing page — feeds all post metadata to the client-side listing. */
+/** Blog listing page - feeds all post metadata to the client-side listing. */
 export default async function BlogPage({ searchParams }: BlogPageProps) {
   const params = await searchParams;
   const typeFilter = params.type as PostType | undefined;
   const categoryFilter = params.category as PostCategory | undefined;
+  const query = params.q;
 
   const all = getPostMetaList();
 
@@ -107,6 +108,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         posts={all}
         initialType={typeFilter}
         initialCategory={categoryFilter}
+        initialQuery={query}
       />
     </>
   );

@@ -9,12 +9,12 @@ publishedAt: 2026-03-01
 updatedAt: 2026-07-01
 author: ossium
 featured: true
-image: /demo/oss_landingpage.webp
+ 
 ---
 
 Finding your first open source project can feel chaotic. There are millions of repositories, noisy issue trackers, and a lot of advice that assumes you already know the workflow.
 
-This guide walks you through a calm, repeatable process—and how tools like ossium help you skip the noise.
+This guide walks you through a calm, repeatable process-and how tools like ossium help you skip the noise.
 
 ## Why “just search GitHub” usually fails
 
@@ -29,7 +29,7 @@ You don’t need the *biggest* project. You need a **healthy, welcoming project*
 
 ## Step 1: Pick a skill you already have
 
-Start with one concrete skill—not “I want to learn everything.”
+Start with one concrete skill-not “I want to learn everything.”
 
 | You know… | Look for… |
 |-----------|-----------|
@@ -44,11 +44,11 @@ Start with one concrete skill—not “I want to learn everything.”
 
 Prefer projects that show:
 
-1. **Recent activity** — commits or merged PRs in the last few months  
-2. **Clear CONTRIBUTING.md** — how to set up and open a PR  
+1. **Recent activity** - commits or merged PRs in the last few months  
+2. **Clear CONTRIBUTING.md** - how to set up and open a PR  
 3. **Labels** like `good first issue`, `help wanted`, or `documentation`  
-4. **Responsive maintainers** — issues get replies, not silence  
-5. **A code of conduct** — signals a healthier community  
+4. **Responsive maintainers** - issues get replies, not silence  
+5. **A code of conduct** - signals a healthier community  
 
 Avoid: zero stars *and* zero recent commits *and* no license (unless you intentionally want to revive something).
 

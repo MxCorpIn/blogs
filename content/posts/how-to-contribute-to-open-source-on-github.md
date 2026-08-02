@@ -1,6 +1,6 @@
 ﻿---
 title: "How to Contribute to Open Source on GitHub: A Complete Workflow"
-description: "Learn the full GitHub contribution workflow—fork, branch, commit, pull request, and review—plus practical tips for first-time open source contributors."
+description: "Learn the full GitHub contribution workflow-fork, branch, commit, pull request, and review-plus practical tips for first-time open source contributors."
 type: howto
 category: contribution
 tags: [github, pull-request, workflow, open-source]
@@ -51,7 +51,7 @@ git remote add upstream https://github.com/ORIGINAL_OWNER/REPO.git
 ### 2. Create a branch
 
 ```bash
-git checkout -b fix/typo-in-readme
+git checkout-b fix/typo-in-readme
 ```
 
 Use short, descriptive branch names: `fix/…`, `feat/…`, `docs/…`.
@@ -64,7 +64,7 @@ Keep scope tight. One problem per PR is easier to review and more likely to merg
 
 ```bash
 git add .
-git commit -m "docs: fix installation typo in README"
+git commit-m "docs: fix installation typo in README"
 ```
 
 Good commit messages explain *why*, not only *what*.
@@ -72,14 +72,14 @@ Good commit messages explain *why*, not only *what*.
 ### 5. Push and open a PR
 
 ```bash
-git push -u origin fix/typo-in-readme
+git push-u origin fix/typo-in-readme
 ```
 
 On GitHub, open a pull request into the original repo’s default branch. Fill the template, link the issue, and describe how you tested.
 
 ### 6. Respond to review
 
-Review is normal—not a failure. Update your branch, push again, and the PR updates automatically.
+Review is normal-not a failure. Update your branch, push again, and the PR updates automatically.
 
 ## Etiquette that gets PRs merged faster
 
@@ -117,4 +117,4 @@ Once you contribute to several repos, context gets messy: different issues, revi
 3. Track it on GitHub (notifications + PR list)  
 
 
-The workflow stays the same whether you’re fixing a typo or shipping a feature—only the size of the change grows.
+The workflow stays the same whether you’re fixing a typo or shipping a feature-only the size of the change grows.

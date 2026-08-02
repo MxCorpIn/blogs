@@ -1,6 +1,6 @@
 ---
 title: "I Used Git Wrong for Years"
-description: "Senior Git habits: status, diff, add -p, bisect, stash, worktree, reflog, clean commits, and recovery—beyond git add . commit push."
+description: "Senior Git habits: status, diff, add-p, bisect, stash, worktree, reflog, clean commits, and recovery-beyond git add . commit push."
 type: guide
 category: tools
 tags: [git, developer-tools, productivity, github, beginners]
@@ -15,11 +15,11 @@ For years, a “full” Git workflow looked like this:
 
 ```bash
 git add .
-git commit -m "update"
+git commit-m "update"
 git push
 ```
 
-Then you watch someone recover deleted commits, clean months of history, and undo a bad merge without panic—while you’re still searching “undo last commit but keep changes.”
+Then you watch someone recover deleted commits, clean months of history, and undo a bad merge without panic-while you’re still searching “undo last commit but keep changes.”
 
 Most developers know Git just enough to survive. People who move fast treat Git as a **timeline of every project state**, not a cloud backup.
 
@@ -38,13 +38,13 @@ Run it before commits, branch switches, and rebases:
 git status
 ```
 
-Most mistakes come from not knowing current state—staging `.env` files, debug logs, unfinished work, random screenshots. Two seconds; saves hours.
+Most mistakes come from not knowing current state-staging `.env` files, debug logs, unfinished work, random screenshots. Two seconds; saves hours.
 
 ## 2. `git diff` before you commit
 
 ```bash
 git diff           # unstaged
-git diff --staged  # what will land in the commit
+git diff--staged  # what will land in the commit
 ```
 
 Catches API keys, broken imports, leftover `console.log`s before they hit the remote.
@@ -54,10 +54,10 @@ Catches API keys, broken imports, leftover `console.log`s before they hit the re
 `git add .` stages everything. Prefer:
 
 ```bash
-git add -p
+git add-p
 ```
 
-Stage hunks selectively—login fix without UI cleanup in the same commit. Cleaner history, easier later debugging.
+Stage hunks selectively-login fix without UI cleanup in the same commit. Cleaner history, easier later debugging.
 
 ## 4. `git bisect` for “which commit broke it?”
 
@@ -86,21 +86,21 @@ Work goes to a safe side shelf; return when the fire is out.
 ## 6. Readable history with `git log`
 
 ```bash
-git log --oneline --graph --decorate
+git log--oneline--graph--decorate
 ```
 
 Branches, merges, and flow become visible. Alias if you use it daily:
 
 ```bash
-alias gl='git log --oneline --graph --decorate'
+alias gl='git log--oneline--graph--decorate'
 ```
 
-## 7. Branches are cheap—use them
+## 7. Branches are cheap-use them
 
 Avoid working only on `main`:
 
 ```bash
-git switch -c fix-login-bug
+git switch-c fix-login-bug
 ```
 
 Experiment freely without risking stable code. Branches are free; breaking `main` is not.
@@ -113,7 +113,7 @@ Wrong file edited:
 git restore app.js
 ```
 
-Back to last committed state for that path—instantly.
+Back to last committed state for that path-instantly.
 
 ## 9. `git worktree` instead of stash-and-pray
 
@@ -141,15 +141,15 @@ Reflog keeps recent actions for a limited window (often ~90 days). Learn it befo
 Prefer:
 
 ```bash
-git commit -m "Fix token refresh issue in auth middleware"
+git commit-m "Fix token refresh issue in auth middleware"
 ```
 
-Over `fix` / `update`. Future you—and reviewers—need the *why*.
+Over `fix` / `update`. Future you-and reviewers-need the *why*.
 
 ## 12. Interactive rebase for clean PRs
 
 ```bash
-git rebase -i HEAD~5
+git rebase-i HEAD~5
 ```
 
 Squash, reword, and reorder local commits before review. Noise like `fix` / `another fix` becomes one meaningful commit.
@@ -160,16 +160,16 @@ Squash, reword, and reorder local commits before review. Noise like `fix` / `ano
 git blame app.js
 ```
 
-Who changed each line, when, which commit—useful for bugs and “why does this exist?”
+Who changed each line, when, which commit-useful for bugs and “why does this exist?”
 
 ## 14. Aliases remove friction
 
 ```bash
 alias gs='git status'
 alias ga='git add'
-alias gc='git commit -m'
+alias gc='git commit-m'
 alias gp='git push'
-alias gl='git log --oneline --graph --decorate'
+alias gl='git log--oneline--graph--decorate'
 ```
 
 Lower friction means you actually run the inspection commands that prevent disasters.
@@ -182,4 +182,4 @@ Good Git is less about memorizing flags and more about **staying calm when thing
 - Undo safely (`restore`, `stash`, rebase carefully)  
 - Recover (`reflog`, bisect)  
 
-Start with three: **`git diff`**, **`git stash`**, **`git reflog`**. Treat Git as a time machine, not a backup drive—confidence follows.
+Start with three: **`git diff`**, **`git stash`**, **`git reflog`**. Treat Git as a time machine, not a backup drive-confidence follows.

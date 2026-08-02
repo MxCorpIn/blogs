@@ -4,7 +4,7 @@ Thanks for wanting to contribute! This is the open-source repository for the
 [ossium](https://ossium.in) blog. Both **code** and **content** contributions are
 welcome.
 
-Please read the [Code of Conduct](CODE_OF_CONDUCT.md) before participating — all
+Please read the [Code of Conduct](CODE_OF_CONDUCT.md) before participating - all
 interaction is governed by it.
 
 ## Table of contents
@@ -22,10 +22,10 @@ interaction is governed by it.
 
 ## Ways to contribute
 
-- **Content** — fix a typo, correct stale information, or write a new post under `content/posts/`
-- **Code** — improve the content pipeline, SEO, performance, accessibility, or developer experience
-- **Triage** — reproduce reported bugs, answer questions, and review PRs
-- **Docs** — improve this repository's documentation
+- **Content** - fix a typo, correct stale information, or write a new post under `content/posts/`
+- **Code** - improve the content pipeline, SEO, performance, accessibility, or developer experience
+- **Triage** - reproduce reported bugs, answer questions, and review PRs
+- **Docs** - improve this repository's documentation
 
 ## Getting started
 
@@ -50,7 +50,7 @@ Create feature branches from `main`. Use a short, kebab-case name prefixed by it
 kind:
 
 | Kind    | Prefix     | Example                      |
-| ------- | ---------- | ---------------------------- |
+|------- |---------- |---------------------------- |
 | Feature | `feat/`    | `feat/reading-progress-bar`  |
 | Bug fix | `fix/`     | `fix/search-highlight-flash` |
 | Content | `content/` | `content/gsoc-2027-timeline` |
@@ -90,7 +90,7 @@ Blog posts live in `content/posts/`. Each post is a Markdown file with YAML
 frontmatter. See [content/posts/README.md](content/posts/README.md) for the
 frontmatter schema and post types.
 
-**Important:** the content in `content/posts/` is _not_ MIT licensed — it is
+**Important:** the content in `content/posts/` is _not_ MIT licensed - it is
 © Ossium, all rights reserved. Contributions to it are made under the same terms.
 By contributing a post you grant Ossium the right to publish it on the blog.
 
@@ -106,9 +106,9 @@ By contributing a post you grant Ossium the right to publish it on the blog.
 
 - TypeScript, strict mode. Match the style of the surrounding code.
 - Use the path alias `@/` for imports (see `tsconfig.json`).
-- Formatting is handled by Prettier — run `pnpm format` before committing.
+- Formatting is handled by Prettier - run `pnpm format` before committing.
 - No `console.log` in committed code; prefer the debugger or a proper logger.
-- No commented-out code or unresolved `TODO`s — file an issue instead.
+- No commented-out code or unresolved `TODO`s - file an issue instead.
 
 ## Testing
 
@@ -116,7 +116,7 @@ We use [Vitest](https://vitest.dev). Run the suite with:
 
 ```bash
 pnpm test          # once
-pnpm test --watch  # watch mode
+pnpm test--watch  # watch mode
 ```
 
 Before pushing, run the full check suite:
@@ -130,11 +130,11 @@ pnpm build
 ```
 
 New code should come with tests where practical. Pure logic (the content pipeline
-in `lib/`) is the primary target — see `lib/content/` tests for examples.
+in `lib/`) is the primary target - see `lib/content/` tests for examples.
 
 ## Opening a pull request
 
-1. Push your branch to your fork: `git push -u origin <branch>`
+1. Push your branch to your fork: `git push-u origin <branch>`
 2. Open a PR against `main` using the [pull request template](.github/PULL_REQUEST_TEMPLATE.md).
 3. Fill in the checklist. Link any related issue (e.g. `Fixes #42`).
 4. A maintainer will review. Address review comments and push updates to the same branch.

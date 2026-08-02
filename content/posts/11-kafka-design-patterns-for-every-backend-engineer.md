@@ -1,6 +1,6 @@
 ---
 title: "11 Kafka Design Patterns for Every Backend Engineer"
-description: "Event sourcing, CQRS, DLQ, outbox, sagas, and more—11 essential Apache Kafka patterns with when to use them, AWS notes, and code snippets."
+description: "Event sourcing, CQRS, DLQ, outbox, sagas, and more-11 essential Apache Kafka patterns with when to use them, AWS notes, and code snippets."
 type: guide
 category: tools
 tags: [kafka, backend, event-driven, system-design, aws]
@@ -13,7 +13,7 @@ featured: false
 
 Using Kafka well takes more than produce and consume. You need patterns for ordering, exactly-once semantics, large payloads, failure recovery, and integration with services like MSK, S3, DynamoDB, and Lambda.
 
-This guide covers **11 essential Kafka patterns**—what each one is, when to use it, how it maps to AWS, and a small code snippet. Use it as a map for event-driven microservices, data pipelines, or migrations to Amazon MSK.
+This guide covers **11 essential Kafka patterns**-what each one is, when to use it, how it maps to AWS, and a small code snippet. Use it as a map for event-driven microservices, data pipelines, or migrations to Amazon MSK.
 
 ## Pattern overview
 
@@ -50,7 +50,7 @@ Instead of storing only the current state of an entity, you store every state-ch
 Create an MSK topic with long retention (or backup to S3 via MSK Connect S3 Sink). Consumers rebuild state from the earliest offset. Tools like ksqlDB can materialize views from the event log.
 
 ```python
-# Producer — append only
+# Producer - append only
 event = {
     "event_type": "OrderCreated",
     "order_id": "123",
@@ -59,7 +59,7 @@ event = {
 }
 producer.send("order_events", key="123", value=json.dumps(event))
 
-# Consumer — rebuild state by replaying
+# Consumer - rebuild state by replaying
 state = {}
 for msg in consumer:
     event = json.loads(msg.value)
@@ -116,7 +116,7 @@ public void updateReadModels(OrderEvent event) {
 ## 3. Event Carried State Transfer
 
 **What it is:**  
-Events carry the full state consumers need—not just an ID. Consumers don’t call back to the source service, which reduces coupling, network hops, and latency.
+Events carry the full state consumers need-not just an ID. Consumers don’t call back to the source service, which reduces coupling, network hops, and latency.
 
 **When to use:**
 
@@ -305,7 +305,7 @@ def lambda_handler(event, context):
 ## 8. Compacted Topic
 
 **What it is:**  
-A topic with `cleanup.policy=compact` keeps only the **latest message per key**. Older values for that key are removed during compaction—turning the topic into a replicated key-value log.
+A topic with `cleanup.policy=compact` keeps only the **latest message per key**. Older values for that key are removed during compaction-turning the topic into a replicated key-value log.
 
 **When to use:**
 
@@ -377,7 +377,7 @@ public void listen(ConsumerRecord<String, String> record) {
 ## 10. Stream-Table Duality
 
 **What it is:**  
-Kafka is both a **stream** (events over time) and a **table** (current state per key). You can aggregate a stream into a table, or emit a table’s changelog as a stream—core to Kafka Streams and ksqlDB.
+Kafka is both a **stream** (events over time) and a **table** (current state per key). You can aggregate a stream into a table, or emit a table’s changelog as a stream-core to Kafka Streams and ksqlDB.
 
 **When to use:**
 
@@ -425,7 +425,7 @@ KStream<String, ClickEvent> clickStream = builder.stream("clicks");
 
 KStream<String, EnrichedClick> enriched = clickStream.join(
     userTable,
-    (click, profile) -> new EnrichedClick(click, profile),
+    (click, profile)-> new EnrichedClick(click, profile),
     Joined.with(Serdes.String(), clickSerde, profileSerde)
 );
 ```
@@ -449,7 +449,7 @@ A distributed transaction without a central coordinator. Each service does local
 Topics per domain (`order_events`, `payment_events`). For complex branching, combine with Step Functions (orchestration) while still using Kafka for events.
 
 ```python
-# Order service — starts the saga
+# Order service - starts the saga
 def create_order(order):
     db.insert(order, status="PENDING")
     producer.send(
@@ -475,7 +475,7 @@ def handle_order_created(event):
             value={"event": "OrderCancelled", "order_id": event["order_id"]},
         )
 
-# Order service — compensation
+# Order service - compensation
 def handle_order_cancelled(event):
     db.update(event["order_id"], status="CANCELLED")
     refund_any_pre_authorizations(event["order_id"])
@@ -493,4 +493,4 @@ def handle_order_cancelled(event):
 | State & history | Event Sourcing, CQRS, Compacted Topic, Event Carried State |
 | Scale & integration | Claim Check, Stream-Table Duality, Saga |
 
-These patterns aren’t theoretical—they’re how production teams keep event systems resilient, scalable, and maintainable on Kafka and AWS MSK.
+These patterns aren’t theoretical-they’re how production teams keep event systems resilient, scalable, and maintainable on Kafka and AWS MSK.

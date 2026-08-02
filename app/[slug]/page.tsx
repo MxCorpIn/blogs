@@ -113,7 +113,7 @@ function formatDate(iso: string): string {
   return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
 }
 
-/** Full article page — cover, prose body, tags, share, and related posts. */
+/** Full article page - cover, prose body, tags, share, and related posts. */
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -216,10 +216,10 @@ export default async function BlogPostPage({ params }: PageProps) {
       >
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 text-[14px] font-medium tracking-[-0.005em] text-neutral-600 hover:text-neutral-900 transition-colors mb-8 dark:text-neutral-500 dark:hover:text-neutral-100"
+          className="group inline-flex items-center gap-1.5 text-[14px] font-medium tracking-[-0.005em] text-neutral-600 hover:text-neutral-900 transition-colors mb-8 dark:text-neutral-500 dark:hover:text-neutral-100"
         >
           <ArrowLeft size={16} />
-          All posts
+          <span className="u-underline">All posts</span>
         </Link>
 
         <header className="mb-10">
@@ -229,9 +229,11 @@ export default async function BlogPostPage({ params }: PageProps) {
             </span>
             <Link
               href={`/?category=${post.category}`}
-              className="text-[11px] font-semibold uppercase tracking-[0.04em] px-2 py-0.5 rounded bg-neutral-200 text-neutral-700 hover:text-neutral-900 transition-colors dark:bg-neutral-800/80 dark:text-neutral-400 dark:hover:text-neutral-100"
+              className="group text-[11px] font-semibold uppercase tracking-[0.04em] px-2 py-0.5 rounded bg-neutral-200 text-neutral-700 hover:text-neutral-900 transition-colors dark:bg-neutral-800/80 dark:text-neutral-400 dark:hover:text-neutral-100"
             >
-              {CATEGORY_LABELS[post.category]}
+              <span className="u-underline">
+                {CATEGORY_LABELS[post.category]}
+              </span>
             </Link>
           </div>
 
@@ -338,18 +340,18 @@ export default async function BlogPostPage({ params }: PageProps) {
             href="https://buymeacoffee.com/manixh"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-[14px] font-medium tracking-[-0.005em] text-neutral-600 hover:text-neutral-900 transition-colors dark:text-neutral-400 dark:hover:text-neutral-100"
+            className="group inline-flex items-center gap-1.5 text-[14px] font-medium tracking-[-0.005em] text-neutral-600 hover:text-neutral-900 transition-colors dark:text-neutral-400 dark:hover:text-neutral-100"
           >
             <Coffee size={14} />
-            Buy me a coffee
+            <span className="u-underline">Buy me a coffee</span>
           </a>
           <div className="flex items-center gap-5">
             <Link
               href={`${SOURCE_EDIT_BASE}/content/posts/${post.slug}.md`}
-              className="inline-flex items-center gap-1.5 text-[14px] font-medium tracking-[-0.005em] text-neutral-600 hover:text-neutral-900 transition-colors dark:text-neutral-400 dark:hover:text-neutral-100"
+              className="group inline-flex items-center gap-1.5 text-[14px] font-medium tracking-[-0.005em] text-neutral-600 hover:text-neutral-900 transition-colors dark:text-neutral-400 dark:hover:text-neutral-100"
             >
               <Pencil size={14} />
-              Edit this page
+              <span className="u-underline">Edit this page</span>
             </Link>
             <ShareButton url={url} />
           </div>

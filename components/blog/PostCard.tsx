@@ -30,7 +30,7 @@ function formatDate(iso: string): string {
   return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
 }
 
-/** Listing card linking to a post — type/category badges, title, meta, and thumbnail. */
+/** Listing card linking to a post - type/category badges, title, meta, and thumbnail. */
 export default function PostCard({ post }: PostCardProps) {
   const image = post.image;
 

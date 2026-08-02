@@ -1,12 +1,12 @@
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
-/** Outer / divider stroke — follows the theme's decorative geometry token. */
+/** Outer / divider stroke - follows the theme's decorative geometry token. */
 const FRAME_STROKE = "var(--geom)";
 
 /**
  * "+" registration marks at each corner of the dashed frame.
- * Anchored with left/top % so translate(-50%, -50%) centers on the corner point.
+ * Anchored with left/top % so translate(-50%,-50%) centers on the corner point.
  * Solid page-bg mask + padding so dash strokes don't show through the glyph.
  */
 function CornerPlus({
@@ -117,7 +117,7 @@ export default function DashedFrame({
       className={cn("relative w-full", className)}
       style={{ backgroundColor: bg }}
     >
-      {/* z-10 — dashes sit under corner marks */}
+      {/* z-10 - dashes sit under corner marks */}
       <DashedFrameBorder />
       {corners ? (
         <>

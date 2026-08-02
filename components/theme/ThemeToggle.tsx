@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
-/** Fixed top-right light/dark toggle; persists the choice under `ossium-theme`. */
+/** Light/dark toggle (placed inside the navbar); persists under `ossium-theme`. */
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(true);
 
@@ -26,7 +26,7 @@ export default function ThemeToggle() {
       onClick={toggle}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="fixed right-4 top-4 z-50 inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-white/80 text-neutral-700 backdrop-blur-md transition-colors duration-200 ease-out hover:border-neutral-300 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-900/80 dark:text-neutral-300 dark:hover:border-neutral-700 dark:hover:text-neutral-100"
+      className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-neutral-700 transition-colors duration-200 ease-out hover:bg-neutral-200 hover:text-neutral-900 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10 dark:hover:text-neutral-100"
     >
       {isDark ? <Sun size={16} /> : <Moon size={16} />}
     </button>

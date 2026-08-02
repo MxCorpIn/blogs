@@ -1,6 +1,6 @@
 ---
 title: "Top 20 Java Scenario-Based Interview Questions for Experienced Developers"
-description: "Practice production-style Java interview scenarios: collections, concurrency, JVM, immutability, caching, retries, and design—problem, approach, tradeoff."
+description: "Practice production-style Java interview scenarios: collections, concurrency, JVM, immutability, caching, retries, and design-problem, approach, tradeoff."
 type: guide
 category: career
 tags: [java, interviews, concurrency, jvm, backend]
@@ -23,12 +23,12 @@ For experienced roles, expect depth in:
 
 Practice as **problem → approach → tradeoff**.
 
-## 1. Large list of objects—remove duplicates efficiently?
+## 1. Large list of objects-remove duplicates efficiently?
 
 Use a `Set`.
 
-- `HashSet` — fastest  
-- `LinkedHashSet` — preserves insertion order  
+- `HashSet` - fastest  
+- `LinkedHashSet` - preserves insertion order  
 
 For custom types, implement correct `equals()` / `hashCode()`.
 
@@ -55,8 +55,8 @@ List<Order> orders = Optional.ofNullable(service.getOrders())
 
 Practical options:
 
-- **Enum singleton** — strong against serialization/reflection quirks  
-- **Bill Pugh holder** — lazy + thread-safe  
+- **Enum singleton** - strong against serialization/reflection quirks  
+- **Bill Pugh holder** - lazy + thread-safe  
 
 ```java
 class Singleton {

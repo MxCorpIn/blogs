@@ -11,7 +11,7 @@ export const SECTION_CONTAINER_CLASS =
 
 /**
  * Shared vertical rhythm between landing sections.
- * Keep this modest — adjacent sections stack pt+pb, so large py doubles the gap.
+ * Keep this modest - adjacent sections stack pt+pb, so large py doubles the gap.
  * Use `SECTION_Y_TOP` for Hero bottom / Footer top.
  */
 export const SECTION_Y_TOP = "pt-6 sm:pt-8 md:pt-10";

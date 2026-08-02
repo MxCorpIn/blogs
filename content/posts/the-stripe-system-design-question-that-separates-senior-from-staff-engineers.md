@@ -1,6 +1,6 @@
 ---
 title: "The Stripe System Design Question That Separates Senior From Staff Engineers"
-description: "Exactly-once payments under retries: idempotency keys, in-progress state machines, CAS, and when sagas enter the conversation—senior vs staff depth."
+description: "Exactly-once payments under retries: idempotency keys, in-progress state machines, CAS, and when sagas enter the conversation-senior vs staff depth."
 type: article
 category: career
 tags: [system-design, distributed-systems, idempotency, interviews, payments]
@@ -11,7 +11,7 @@ author: ossium
 featured: false
 ---
 
-Payment systems sit on banks, card networks, merchants, and internal services. A network blip triggers a client retry. Did the first charge succeed? You may not know. Double charge, double fulfill, fraud flags—all possible.
+Payment systems sit on banks, card networks, merchants, and internal services. A network blip triggers a client retry. Did the first charge succeed? You may not know. Double charge, double fulfill, fraud flags-all possible.
 
 **How do you guarantee a payment executes exactly once when nothing in the network is guaranteed?**
 
@@ -23,7 +23,7 @@ Happy path: user clicks Pay → call payments API → store result.
 
 Interviewers care about the **gap** between sending a request and knowing the result. Distributed systems live there.
 
-Schemas, service boundaries, and rate limits matter—but the core is delivery semantics:
+Schemas, service boundaries, and rate limits matter-but the core is delivery semantics:
 
 | Guarantee | Risk |
 |-----------|------|
@@ -45,7 +45,7 @@ Stripe’s public docs describe this: clients send an `Idempotency-Key` header; 
 - Happy-path end-to-end flow  
 - Why this stops the simple double-charge case  
 
-Stopping here is the usual senior ceiling—and the door to the staff follow-up.
+Stopping here is the usual senior ceiling-and the door to the staff follow-up.
 
 ## The staff answer: state between key and result
 
@@ -64,16 +64,16 @@ Treat the idempotency record as a **state machine**, not a dumb cache:
 | State | On retry |
 |-------|----------|
 | Missing | Start fresh; write **in progress** before side effects |
-| In progress | Conflict / wait—do not re-execute |
+| In progress | Conflict / wait-do not re-execute |
 | Completed | Return cached result |
 
-Concurrent retries need **compare-and-swap** or a lock so only one holder of “in progress” exists. That adds latency and makes the idempotency store a critical-path dependency. The trade-off—latency and availability for correctness—is what the question is really probing.
+Concurrent retries need **compare-and-swap** or a lock so only one holder of “in progress” exists. That adds latency and makes the idempotency store a critical-path dependency. The trade-off-latency and availability for correctness-is what the question is really probing.
 
 ## The hidden dimension: multi-service side effects
 
 Your payment service may call several downstreams. One fails mid-flight: bank notified, inventory not updated, email not sent. Top-level idempotency does not automatically coordinate every child effect.
 
-That boundary is **distributed transaction design**—where **sagas** live: local steps plus compensating actions, eventual consistency, not 2PC across five services.
+That boundary is **distributed transaction design**-where **sagas** live: local steps plus compensating actions, eventual consistency, not 2PC across five services.
 
 Strong candidates reach keys + state machines. Exceptional candidates name coordination patterns (saga, outbox, explicit compensations) and their costs.
 
@@ -99,4 +99,4 @@ Not whether you’ve heard the word “idempotency.” Whether you:
 
 Payments make missing guarantees expensive. The question is less about Stripe and more about clear thinking when nothing is guaranteed and everything has a cost.
 
-The next hard problem—making compensating transactions themselves idempotent so recovery is safe to retry—is where much of the interesting systems work continues.
+The next hard problem-making compensating transactions themselves idempotent so recovery is safe to retry-is where much of the interesting systems work continues.

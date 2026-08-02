@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { cloneElement, isValidElement } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
 
 interface MarkdownBodyProps {
   content: string;
@@ -20,6 +22,7 @@ export default function MarkdownBody({ content }: MarkdownBodyProps) {
     <div className="blog-prose text-neutral-600 dark:text-neutral-300 text-[16px] sm:text-[17px] leading-[1.75] tracking-[-0.003em]">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
+        rehypePlugins={[[rehypeHighlight, { ignoreMissing: true }]]}
         components={{
           h1: ({ children }) => (
             <h1 className="font-display text-[26px] sm:text-[30px] font-semibold leading-[1.25] tracking-[-0.02em] text-neutral-900 dark:text-neutral-100 mt-10 mb-4">
@@ -119,14 +122,47 @@ export default function MarkdownBody({ content }: MarkdownBodyProps) {
               </span>
             );
           },
-          code: ({ children, className }) => {
-            const isBlock = Boolean(className);
+          pre: ({ children }) => {
+            const codeEl = isValidElement<{ className?: string }>(children)
+              ? children
+              : null;
+            const className = codeEl?.props?.className ?? "";
+            const lang = className.match(/language-(\w+)/)?.[1] ?? "code";
+            const body =
+              className.includes("language-") || !codeEl
+                ? children
+                : cloneElement(codeEl, { className: undefined });
+            return (
+              <div className="my-6 overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-[#121314]">
+                <div className="flex items-center justify-between border-b border-neutral-200 bg-neutral-100 px-4 py-2.5 dark:border-neutral-800/70 dark:bg-[#0b0c0d]">
+                  <div className="flex items-center gap-1.5">
+                    <span
+                      className="h-[11px] w-[11px] rounded-full bg-[#ff5f57]"
+                      aria-hidden="true"
+                    />
+                    <span
+                      className="h-[11px] w-[11px] rounded-full bg-[#febc2e]"
+                      aria-hidden="true"
+                    />
+                    <span
+                      className="h-[11px] w-[11px] rounded-full bg-[#28c840]"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <span className="text-[11px] font-medium tracking-[0.02em] text-neutral-400 dark:text-white/40">
+                    {lang}
+                  </span>
+                </div>
+                <pre className="overflow-x-auto p-4 text-[13.5px] font-mono leading-relaxed text-neutral-800 dark:text-neutral-200">
+                  {body}
+                </pre>
+              </div>
+            );
+          },
+          code: ({ className, children }) => {
+            const isBlock = className?.includes("language-") ?? false;
             if (isBlock) {
-              return (
-                <code className="font-mono text-[14px] text-neutral-800 dark:text-neutral-200">
-                  {children}
-                </code>
-              );
+              return <code className={className}>{children}</code>;
             }
             return (
               <code className="px-1.5 py-0.5 rounded bg-neutral-200 text-neutral-800 text-[14px] font-mono border border-neutral-300 dark:bg-neutral-800/80 dark:text-neutral-200 dark:border-neutral-700/50">
@@ -134,11 +170,6 @@ export default function MarkdownBody({ content }: MarkdownBodyProps) {
               </code>
             );
           },
-          pre: ({ children }) => (
-            <pre className="my-6 overflow-x-auto rounded-lg bg-neutral-100 border border-neutral-200 p-4 text-[14px] font-mono leading-relaxed dark:bg-[#121314] dark:border-neutral-800">
-              {children}
-            </pre>
-          ),
           table: ({ children }) => (
             <div className="my-6 overflow-x-auto">
               <table className="w-full border-collapse text-sm">

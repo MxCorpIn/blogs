@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Check, Share2 } from "lucide-react";
 
-/** Share button — native share sheet when available, otherwise copies the URL. */
+/** Share button - native share sheet when available, otherwise copies the URL. */
 export default function ShareButton({ url }: { url: string }) {
   const [copied, setCopied] = useState(false);
 
@@ -13,7 +13,7 @@ export default function ShareButton({ url }: { url: string }) {
         await navigator.share({ title: document.title, url });
         return;
       } catch {
-        // user cancelled the native sheet — fall through to clipboard
+        // user cancelled the native sheet - fall through to clipboard
       }
     }
     try {

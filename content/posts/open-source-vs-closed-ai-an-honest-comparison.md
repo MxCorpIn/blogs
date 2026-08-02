@@ -1,5 +1,5 @@
 ---
-title: "Open Source vs Closed AI — An Honest Comparison"
+title: "Open Source vs Closed AI - An Honest Comparison"
 description: "Control vs convenience: when open-weight models win, when closed APIs win, a practical checklist, and why hybrid use is normal in 2026."
 type: article
 category: tools
@@ -11,19 +11,19 @@ author: ossium
 featured: false
 ---
 
-Open-source AI and closed APIs are often framed as a team sport. They aren’t. They solve **different jobs**. The useful comparison is **control vs convenience**—not identity.
+Open-source AI and closed APIs are often framed as a team sport. They aren’t. They solve **different jobs**. The useful comparison is **control vs convenience**-not identity.
 
 ## Definitions without the flame war
 
 **Open-source / open-weight AI (practically):** weights (and often code) are public. You can download, inspect, modify, fine-tune, and run on your hardware. More control. More setup. More responsibility for ops and safety.
 
-**Closed AI:** access via app or API—ChatGPT, Claude, Gemini, hosted copilots. Someone else hosts, updates, and scales. You pay for convenience and get less visibility into weights and training. Faster to start.
+**Closed AI:** access via app or API-ChatGPT, Claude, Gemini, hosted copilots. Someone else hosts, updates, and scales. You pay for convenience and get less visibility into weights and training. Faster to start.
 
 Both are valid. Task list beats tribe.
 
 ## How a hybrid split often looks
 
-**Closed APIs — daily work**
+**Closed APIs - daily work**
 
 - Debugging help and explanations  
 - Drafting scripts and docs  
@@ -32,12 +32,12 @@ Both are valid. Task list beats tribe.
 
 Best general chat models, zero infra: open tab, paste context, go.
 
-**Open weights — when the job demands it**
+**Open weights - when the job demands it**
 
 - Data must stay local  
 - Fine-tuning on a private dataset  
 - Offline / edge / constrained networks  
-- Cost control at high volume (sometimes—run the math)  
+- Cost control at high volume (sometimes-run the math)  
 
 Loyalty to finishing the task with acceptable risk beats loyalty to a logo.
 
@@ -48,7 +48,7 @@ Loyalty to finishing the task with acceptable risk beats loyalty to a logo.
 | **Customization** | Behavior closed APIs won’t allow |
 | **Privacy** | Data can’t leave the network |
 | **Edge / offline** | Open weights on local hardware |
-| **Scale cost** | Self-host *may* beat tokens—depends on volume and ops |
+| **Scale cost** | Self-host *may* beat tokens-depends on volume and ops |
 | **Learning internals** | Configs, inference stacks, and training code teach differently |
 
 ## When closed wins
@@ -75,7 +75,7 @@ Loyalty to finishing the task with acceptable risk beats loyalty to a logo.
 4. **Deep fine-tuning?** → often open ecosystem.  
 5. **One-off explanation / brainstorm?** → closed is hard to beat.
 
-Not carved in stone—enough to stop endless tab switching.
+Not carved in stone-enough to stop endless tab switching.
 
 ## Beginners
 
@@ -85,7 +85,7 @@ Not carved in stone—enough to stop endless tab switching.
 
 ## Privacy
 
-Pasting internal identifiers or customer-adjacent data into a public API often feels wrong for a reason. Local options aren’t only for researchers—they’re for anyone who needs to experiment without exporting data by default. Know what leaves your machine; closed tools make that easy to forget.
+Pasting internal identifiers or customer-adjacent data into a public API often feels wrong for a reason. Local options aren’t only for researchers-they’re for anyone who needs to experiment without exporting data by default. Know what leaves your machine; closed tools make that easy to forget.
 
 ## Students on limited hardware
 
@@ -93,7 +93,7 @@ Small open models can run (slowly) on old laptops. Closed APIs need network and 
 
 ## Version drift (both sides)
 
-Models update. APIs change quietly. Open weights have commits; closed APIs have changelogs. Bookmark one release source for whatever you use weekly—five minutes a month prevents mystery regressions.
+Models update. APIs change quietly. Open weights have commits; closed APIs have changelogs. Bookmark one release source for whatever you use weekly-five minutes a month prevents mystery regressions.
 
 ## Takeaway
 
@@ -105,4 +105,4 @@ Models update. APIs change quietly. Open weights have commits; closed APIs have 
 
 Use closed for learning and daily thinking when risk allows. Reach for open when deployment, customization, or privacy push you there.
 
-Hybrid isn’t indecision—it’s matching the surface to the task. Ask whether your current split comes from **your workload**, or from a default you never revisited.
+Hybrid isn’t indecision-it’s matching the surface to the task. Ask whether your current split comes from **your workload**, or from a default you never revisited.

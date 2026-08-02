@@ -14,7 +14,7 @@ draft: false
 
 Many people still pay ~$20/month for a single hosted AI model. NVIDIA's free inference catalog is a practical alternative for prototyping and light agent work.
 
-The product is **NVIDIA NIM** (NVIDIA Inference Microservices), available at [build.nvidia.com](https://build.nvidia.com). The catalog lists 100+ models, many free and hosted on NVIDIA's DGX Cloud—names you already know: MiniMax, Kimi, DeepSeek, GLM, GPT-OSS, and more.
+The product is **NVIDIA NIM** (NVIDIA Inference Microservices), available at [build.nvidia.com](https://build.nvidia.com). The catalog lists 100+ models, many free and hosted on NVIDIA's DGX Cloud-names you already know: MiniMax, Kimi, DeepSeek, GLM, GPT-OSS, and more.
 
 **One API key. OpenAI-compatible endpoints.** Swap a base URL and model string; any tool that speaks the OpenAI API format can talk to NVIDIA.
 
@@ -32,7 +32,7 @@ const payload = {
 };
 ```
 
-Coding tools, agents, and scripts can route through NVIDIA's free layer by changing a few config lines—**if** your IDE actually allows custom endpoints for agent features.
+Coding tools, agents, and scripts can route through NVIDIA's free layer by changing a few config lines-**if** your IDE actually allows custom endpoints for agent features.
 
 ## Free models vs what your IDE allows
 
@@ -50,9 +50,9 @@ https://integrate.api.nvidia.com/v1
 
 Paste your `nvapi-…` key.
 
-**Limitation 1 — free plan:** Hobby free plans may only allow Auto and block named custom models ("Free plans can only use Auto…").
+**Limitation 1 - free plan:** Hobby free plans may only allow Auto and block named custom models ("Free plans can only use Auto…").
 
-**Limitation 2 — agent features:** Cursor has historically kept Composer, inline edit, autocomplete, and full agent routes on its own backend rather than custom endpoints—even on Pro. Treat NVIDIA in Cursor as **chat / custom model**, not a guaranteed full agent stack.
+**Limitation 2 - agent features:** Cursor has historically kept Composer, inline edit, autocomplete, and full agent routes on its own backend rather than custom endpoints-even on Pro. Treat NVIDIA in Cursor as **chat / custom model**, not a guaranteed full agent stack.
 
 ### Cline: full agentic coding in VS Code
 
@@ -66,20 +66,20 @@ Paste your `nvapi-…` key.
 4. Paste your `nvapi-` key.  
 5. Enter a model ID from the NVIDIA catalog (e.g. `moonshotai/kimi-k2.6`).  
 
-Cline can read the codebase, create/edit files, run terminal commands, read stderr, and iterate—on NVIDIA's free inference layer.
+Cline can read the codebase, create/edit files, run terminal commands, read stderr, and iterate-on NVIDIA's free inference layer.
 
-**Important:** agent features need **tool / function calling**. Not every catalog model supports it. Check the model card before relying on agent mode. Some models are slow; others may produce garbage or wrong-language output under load—try a few (`openai/gpt-oss-20b` and stronger Kimi variants are common experiments). Prefer models explicitly documented for tool use.
+**Important:** agent features need **tool / function calling**. Not every catalog model supports it. Check the model card before relying on agent mode. Some models are slow; others may produce garbage or wrong-language output under load-try a few (`openai/gpt-oss-20b` and stronger Kimi variants are common experiments). Prefer models explicitly documented for tool use.
 
 ## Get a free API key
 
 1. Go to [build.nvidia.com](https://build.nvidia.com) and create a free account (email/phone verification may apply).  
-2. Account settings → generate an API key. Save it—you often only see it once.  
+2. Account settings → generate an API key. Save it-you often only see it once.  
 
 ```text
 nvapi-xxxxxxxxxxxxxxxx
 ```
 
-Signup typically includes free inference credits (e.g. on the order of 1,000, with more available on request) and a rate limit around **40 requests per minute**. No credit card required—enough to prototype seriously.
+Signup typically includes free inference credits (e.g. on the order of 1,000, with more available on request) and a rate limit around **40 requests per minute**. No credit card required-enough to prototype seriously.
 
 ## Practical takeaway
 
@@ -89,4 +89,4 @@ Signup typically includes free inference credits (e.g. on the order of 1,000, wi
 | Full agent loop on free models | Cline + NVIDIA endpoint + tool-capable model |
 | Cursor-only workflow | Custom endpoint may be limited; check current plan and feature routing |
 
-Pair this with local options when you need offline or higher volume—see related posts on [open-source LLMs](/open-source-llms-in-2026-the-free-ai-models-everyone-will-be-using-while-you-re-still-overpaying) and [local coding models](/what-is-the-best-local-llm-for-coding-in-2026).
+Pair this with local options when you need offline or higher volume-see related posts on [open-source LLMs](/open-source-llms-in-2026-the-free-ai-models-everyone-will-be-using-while-you-re-still-overpaying) and [local coding models](/what-is-the-best-local-llm-for-coding-in-2026).

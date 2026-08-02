@@ -1,6 +1,6 @@
 ---
 title: "Junior Devs Use try-catch Everywhere. Senior Devs Use These 4 Patterns"
-description: "Why wrapping every method in try-catch hides bugs—and four senior patterns: validation first, exception hierarchy, @ControllerAdvice, and Result objects."
+description: "Why wrapping every method in try-catch hides bugs-and four senior patterns: validation first, exception hierarchy, @ControllerAdvice, and Result objects."
 type: article
 category: tools
 tags: [java, spring-boot, error-handling, software-engineering, backend]
@@ -13,7 +13,7 @@ featured: false
 
 A codebase full of try-catch around every controller, service, repository, and utility is not “safe coding.” It’s often a **silent failure factory**.
 
-When every method swallows errors, you get production incidents with no logs, no alerts, and no trail until a customer complains. **Wrapping everything in try-catch is fear-based programming**, not defensive design. Senior engineers reach for try-catch last—only when it’s the right tool.
+When every method swallows errors, you get production incidents with no logs, no alerts, and no trail until a customer complains. **Wrapping everything in try-catch is fear-based programming**, not defensive design. Senior engineers reach for try-catch last-only when it’s the right tool.
 
 ## Why juniors default to try-catch
 
@@ -63,7 +63,7 @@ public class UserRequest {
 }
 ```
 
-**Rule:** If you’re catching exceptions caused by bad input, you have a **validation** problem—not an exception-handling problem.
+**Rule:** If you’re catching exceptions caused by bad input, you have a **validation** problem-not an exception-handling problem.
 
 ## Pattern 2: A custom exception hierarchy
 
@@ -111,7 +111,7 @@ public class BusinessRuleViolatedException extends AppException {
 // Service: no try-catch required for domain failures
 public Order processOrder(OrderRequest request) {
     Order order = orderRepository.findById(request.getOrderId())
-        .orElseThrow(() -> new NotFoundException("Order", request.getOrderId()));
+        .orElseThrow(()-> new NotFoundException("Order", request.getOrderId()));
 
     if (order.isAlreadyProcessed()) {
         throw new BusinessRuleViolatedException("Order already processed");
@@ -120,11 +120,11 @@ public Order processOrder(OrderRequest request) {
 }
 ```
 
-When `NotFoundException` is thrown, you already know **what**, **why**, and roughly **which HTTP status**—no guesswork in every catch block.
+When `NotFoundException` is thrown, you already know **what**, **why**, and roughly **which HTTP status**-no guesswork in every catch block.
 
 **Rule:** If you catch a generic exception and then reverse-engineer what failed, your exceptions aren’t specific enough.
 
-## Pattern 3: `@ControllerAdvice` — handle exceptions in one place
+## Pattern 3: `@ControllerAdvice` - handle exceptions in one place
 
 Juniors paste the same catch logic across controllers. Seniors centralize it.
 
@@ -163,7 +163,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidation(MethodArgumentNotValidException e) {
         String details = e.getBindingResult().getFieldErrors().stream()
-            .map(error -> error.getField() + ": " + error.getDefaultMessage())
+            .map(error-> error.getField() + ": " + error.getDefaultMessage())
             .collect(Collectors.joining(", "));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
             .body(new ErrorResponse("VALIDATION_FAILED", details));
@@ -194,7 +194,7 @@ Not every failure is exceptional. “User not found” can be a **normal outcome
 // ❌ Exception for a common case
 public User findUser(Long id) {
     return userRepository.findById(id)
-        .orElseThrow(() -> new NotFoundException("User", id));
+        .orElseThrow(()-> new NotFoundException("User", id));
 }
 // Every caller must handle the exception
 ```
@@ -239,7 +239,7 @@ if (result.isSuccess()) {
 return ResponseEntity.notFound().build();
 ```
 
-**Rule:** If a scenario is expected business behavior—not a bug or infrastructure failure—prefer a **Result** (or `Optional`) over throwing.
+**Rule:** If a scenario is expected business behavior-not a bug or infrastructure failure-prefer a **Result** (or `Optional`) over throwing.
 
 ## Mental model: exceptional vs expected
 
@@ -248,7 +248,7 @@ return ResponseEntity.notFound().build();
 | **Exceptional** | DB down, API timeout, OOM | try-catch, logging, alerts, maybe retry |
 | **Expected** | User missing, order already shipped, payment declined | Validation, Result/`Optional`, clean control flow |
 
-Once you categorize failures this way, try-catch usage drops—not because you ignore errors, but because you handle them **honestly**.
+Once you categorize failures this way, try-catch usage drops-not because you ignore errors, but because you handle them **honestly**.
 
 ## Action plan
 
@@ -257,4 +257,4 @@ Once you categorize failures this way, try-catch usage drops—not because you i
 3. Collapse repeated controller catch blocks into **`@ControllerAdvice`**.  
 4. Replace one throw for a routine case with a **Result** / `Optional`.  
 
-Don’t rewrite everything at once. Each change makes failure modes more visible—and that’s the real gap between junior and senior error handling.
+Don’t rewrite everything at once. Each change makes failure modes more visible-and that’s the real gap between junior and senior error handling.

@@ -13,7 +13,7 @@ featured: true
 
 **Google Summer of Code (GSoC)** is a global program where contributors work with open source organizations on a funded project for several months, guided by mentors.
 
-It’s one of the best-known paths into serious open source—but success starts months *before* applications open.
+It’s one of the best-known paths into serious open source-but success starts months *before* applications open.
 
 ## Who is GSoC for?
 
@@ -34,7 +34,7 @@ Typical traits of strong applicants:
 4. **Accepted contributors** code with mentors over the summer  
 5. **Evaluations** happen mid and end of the program  
 
-You are not applying to “Google” as a job—you’re collaborating with a mentoring org under GSoC’s umbrella.
+You are not applying to “Google” as a job-you’re collaborating with a mentoring org under GSoC’s umbrella.
 
 ## Choosing the right organization
 
@@ -45,7 +45,7 @@ Don’t pick only by brand name. Prefer orgs where:
 - Idea list is clear and realistic  
 - You’ve already merged at least one small PR  
 
-Browse organizations and history on ossium GSoC Orgs—filter and explore participating orgs to plan early.
+Browse organizations and history on ossium GSoC Orgs-filter and explore participating orgs to plan early.
 
 ## Timeline mindset (start early)
 
@@ -78,11 +78,11 @@ GSoC isn’t the only path. Explore OSS programs for alternatives like Outreachy
 
 ## How ossium helps GSoC aspirants
 
-- **GSoC org browser** — discover orgs and context  
-- **Issue finder** — practice on real beginner-friendly tasks  
-- **[GitHub](https://github.com)** — track your PRs and notifications while you build a contribution history  
+- **GSoC org browser** - discover orgs and context  
+- **Issue finder** - practice on real beginner-friendly tasks  
+- **[GitHub](https://github.com)** - track your PRs and notifications while you build a contribution history  
 
-- **Resources** — curated learning material  
+- **Resources** - curated learning material  
 
 ## Common myths
 
@@ -102,4 +102,4 @@ Prior interaction with the org dramatically improves odds.
 3. Open a small PR (docs or a good-first-issue)  
 4. Keep a weekly contribution habit before applications open  
 
-GSoC rewards preparation. Start contributing now—not the week proposals are due.
+GSoC rewards preparation. Start contributing now-not the week proposals are due.

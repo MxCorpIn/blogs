@@ -1,5 +1,5 @@
 import Footer from "@/components/landing/Footer";
-import ThemeToggle from "@/components/theme/ThemeToggle";
+import Navbar from "@/components/landing/Navbar";
 import { APP_URL } from "@/lib/constants";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
@@ -77,7 +77,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased" suppressHydrationWarning>
         <div className="relative min-h-screen flex flex-col">
-          <ThemeToggle />
+          <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>

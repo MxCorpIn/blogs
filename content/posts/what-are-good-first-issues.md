@@ -8,7 +8,7 @@ keywords: [good first issue, what is good first issue, beginner github issues, f
 publishedAt: 2026-04-10
 author: ossium
 featured: false
-answerSummary: "Good first issues are GitHub issues labeled for newcomers—usually small, well-scoped tasks with enough context for a first-time contributor to complete with light guidance."
+answerSummary: "Good first issues are GitHub issues labeled for newcomers-usually small, well-scoped tasks with enough context for a first-time contributor to complete with light guidance."
 ---
 
 ## What is a good first issue?
@@ -27,11 +27,11 @@ The label is a **signal**, not a guarantee. You still need to read the issue car
 
 Look for:
 
-1. **Clear expected outcome** — what “done” looks like  
-2. **Limited scope** — hours, not weeks  
-3. **Enough context** — steps to reproduce or files to touch  
-4. **Active maintainers** — recent replies on similar issues  
-5. **Linked docs** — setup instructions exist  
+1. **Clear expected outcome** - what “done” looks like  
+2. **Limited scope** - hours, not weeks  
+3. **Enough context** - steps to reproduce or files to touch  
+4. **Active maintainers** - recent replies on similar issues  
+5. **Linked docs** - setup instructions exist  
 
 Red flags:
 
@@ -52,13 +52,13 @@ Use Find Issues to discover contribution opportunities with less tab-hopping, th
 
 Also check:
 
-- Trending repos — active projects often have fresher issues  
-- GSoC orgs — mentoring culture often means clearer starter tasks  
+- Trending repos - active projects often have fresher issues  
+- GSoC orgs - mentoring culture often means clearer starter tasks  
 
 ## How to claim and complete one
 
-1. **Read everything** — issue body, comments, linked PRs  
-2. **Ask if unclear** — one precise question beats silent wrong work  
+1. **Read everything** - issue body, comments, linked PRs  
+2. **Ask if unclear** - one precise question beats silent wrong work  
 3. **Comment that you’re working on it** (if the project asks you to)  
 4. **Set up the project** before writing a big patch  
 5. **Open a focused PR** with test notes  
@@ -80,7 +80,7 @@ It happens. Help review, pick another issue, or improve docs. Open source is not
 
 ### Can docs issues count?
 
-Absolutely. Clear documentation unblocks every future contributor—including you.
+Absolutely. Clear documentation unblocks every future contributor-including you.
 
 ## Keep going
 

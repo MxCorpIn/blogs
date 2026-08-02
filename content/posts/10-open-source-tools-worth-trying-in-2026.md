@@ -1,6 +1,6 @@
 ---
 title: "10 Open-Source Tools Worth Trying in 2026"
-description: "Self-hostable open-source tools for feedback, notes, PDFs, email, microservices, dashboards, photos, and web archiving—practical picks for 2026."
+description: "Self-hostable open-source tools for feedback, notes, PDFs, email, microservices, dashboards, photos, and web archiving-practical picks for 2026."
 type: article
 category: tools
 tags: [open-source, tools, self-hosting, productivity, developer-tools]
@@ -11,7 +11,7 @@ author: ossium
 featured: false
 ---
 
-Some tools make you wonder why you didn’t find them sooner. This list is full of those projects—many can replace paid SaaS, and all are open source so you can use, customize, and often self-host them.
+Some tools make you wonder why you didn’t find them sooner. This list is full of those projects-many can replace paid SaaS, and all are open source so you can use, customize, and often self-host them.
 
 ## 1. Formbricks
 
@@ -41,7 +41,7 @@ It supports bidirectional links, structured organization, and AI agent integrati
 
 [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF) is a self-hosted PDF toolkit: merge, split, convert, edit, sign, compress, OCR, batch jobs, and API automation.
 
-Everything runs on your infrastructure—a practical replacement for browser-based PDF utilities when documents can’t leave your network.
+Everything runs on your infrastructure-a practical replacement for browser-based PDF utilities when documents can’t leave your network.
 
 ## 6. Mailspring
 
@@ -51,7 +51,7 @@ A modern alternative to older, heavier mail apps for personal or professional ma
 
 ## 7. Dapr
 
-[Dapr](https://github.com/dapr/dapr) is a portable runtime for distributed and microservice apps. Building blocks cover service invocation, state, pub/sub, and more—usable across languages on Kubernetes or local setups.
+[Dapr](https://github.com/dapr/dapr) is a portable runtime for distributed and microservice apps. Building blocks cover service invocation, state, pub/sub, and more-usable across languages on Kubernetes or local setups.
 
 It runs alongside your app so you can focus on business logic instead of reinventing cloud-native plumbing for every service.
 
@@ -61,7 +61,7 @@ It runs alongside your app so you can focus on business logic instead of reinven
 
 ## 9. Immich
 
-[Immich](https://github.com/immich-app/immich) is a high-performance self-hosted photo and video platform—think Google Photos–style backup, timelines, facial recognition, and search, with your data on your servers.
+[Immich](https://github.com/immich-app/immich) is a high-performance self-hosted photo and video platform-think Google Photos–style backup, timelines, facial recognition, and search, with your data on your servers.
 
 Mobile and desktop upload paths make it a common choice for private media libraries.
 
@@ -86,4 +86,4 @@ Useful for research, compliance, personal bookmark preservation, and offline cop
 | Immich | Self-hosted photo library |
 | ArchiveBox | Long-term web archiving |
 
-Try one that replaces a paid tool you already depend on—self-hosting pays off fastest when it cuts both cost and data lock-in.
+Try one that replaces a paid tool you already depend on-self-hosting pays off fastest when it cuts both cost and data lock-in.

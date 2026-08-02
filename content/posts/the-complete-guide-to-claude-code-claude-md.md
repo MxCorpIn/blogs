@@ -1,6 +1,6 @@
 ﻿---
 title: "The Complete Guide to Claude Code: CLAUDE.md"
-description: "How CLAUDE.md is loaded, written, and evolved—hierarchy, /init, @imports, reflection, best practices, and how it compares to AGENTS.md and peers."
+description: "How CLAUDE.md is loaded, written, and evolved-hierarchy, /init, @imports, reflection, best practices, and how it compares to AGENTS.md and peers."
 type: guide
 category: tools
 tags: [claude-code, ai, developer-tools, coding-agents, agents-md]
@@ -22,7 +22,7 @@ Treat Claude Code like a new teammate: **`CLAUDE.md` is the onboarding handbook*
 
 ## How CLAUDE.md is loaded
 
-It is not only a single file in the project root. Claude Code uses a **layered loading model**—different paths apply at different scopes.
+It is not only a single file in the project root. Claude Code uses a **layered loading model**-different paths apply at different scopes.
 
 ### File hierarchy
 
@@ -42,7 +42,7 @@ Day to day, **project-level `./CLAUDE.md`** is the one that matters most for tea
 
 - On start, Claude Code reads `CLAUDE.md` files relevant to the current working directory.  
 - User-level `~/.claude/CLAUDE.md` acts as a higher-level preference layer.  
-- Subdirectory `CLAUDE.md` files load when the agent actually works in those directories—not always all up front.  
+- Subdirectory `CLAUDE.md` files load when the agent actually works in those directories-not always all up front.  
 - When multiple files apply, **nearest / narrower scope** usually wins.  
 - Within a layer, **explicit, specific** rules beat vague generalities.  
 
@@ -60,7 +60,7 @@ claude
 /init
 ```
 
-`/init` inspects stack, layout, and common commands and drafts a skeleton. That solves blank-page paralysis—not "this is done." Edit at least once: drafts are broad; some detections are true but not useful. Longer is not better—context is finite, and noise buries real constraints. Delete generic fluff already in docs; add knowledge only your team has (especially failure modes).
+`/init` inspects stack, layout, and common commands and drafts a skeleton. That solves blank-page paralysis-not "this is done." Edit at least once: drafts are broad; some detections are true but not useful. Longer is not better-context is finite, and noise buries real constraints. Delete generic fluff already in docs; add knowledge only your team has (especially failure modes).
 
 ### First-pass priorities
 
@@ -88,7 +88,7 @@ Keep the main file high-signal; maintain detailed standards elsewhere.
 
 ## How CLAUDE.md evolves
 
-It is living project memory—not a one-shot document.
+It is living project memory-not a one-shot document.
 
 ### Write rules from real collaboration pain
 
@@ -152,7 +152,7 @@ Extra context costs tokens and attention. Prefer high-frequency commands, core c
 
 ### Progressive disclosure
 
-Keep stable, cross-task facts in the root file. Split with `@imports` or nested `CLAUDE.md` so local rules load when needed—less irrelevant context every session.
+Keep stable, cross-task facts in the root file. Split with `@imports` or nested `CLAUDE.md` so local rules load when needed-less irrelevant context every session.
 
 ### Never put secrets in CLAUDE.md
 
@@ -174,7 +174,7 @@ Claude Code and Gemini CLI both inject persistent project memory; Claude's hiera
 
 ## Summary
 
-`CLAUDE.md` works best when you start usable and iterate—add, prune, tighten from real collaboration—not when you try to write an encyclopedia on day one. Whatever the ecosystem names the file next, the pattern remains: turn project knowledge into long-term instructions.
+`CLAUDE.md` works best when you start usable and iterate-add, prune, tighten from real collaboration-not when you try to write an encyclopedia on day one. Whatever the ecosystem names the file next, the pattern remains: turn project knowledge into long-term instructions.
 
 ## References
 

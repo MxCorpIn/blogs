@@ -27,7 +27,7 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
   },
 
-  // Tree-shake heavy icon package — less unused JS on the client
+  // Tree-shake heavy icon package - less unused JS on the client
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },

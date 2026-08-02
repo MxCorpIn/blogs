@@ -1,6 +1,6 @@
 ---
 title: "ACID Properties Explained: A Complete Guide with PostgreSQL"
-description: "Learn ACID transactions—atomicity, consistency, isolation, durability—with hands-on PostgreSQL examples for banking-style transfers and isolation levels."
+description: "Learn ACID transactions-atomicity, consistency, isolation, durability-with hands-on PostgreSQL examples for banking-style transfers and isolation levels."
 type: guide
 category: tools
 tags: [postgresql, databases, sql, transactions, backend]
@@ -13,22 +13,22 @@ featured: false
 
 **ACID** is the set of guarantees that make relational databases reliable under failure and concurrency. This guide covers what a transaction is, walks through atomicity, consistency, isolation, and durability, and shows each idea with practical PostgreSQL SQL.
 
-You only need basic SQL—if you can read `SELECT name FROM users`, you can follow along.
+You only need basic SQL-if you can read `SELECT name FROM users`, you can follow along.
 
 ## What you'll learn
 
 1. What a transaction is  
 2. Why ACID matters  
-3. **Atomicity** — all or nothing  
-4. **Isolation** — concurrent transactions and isolation levels  
-5. **Durability** — committed data survives crashes  
-6. **Consistency** — valid state in, valid state out  
+3. **Atomicity** - all or nothing  
+4. **Isolation** - concurrent transactions and isolation levels  
+5. **Durability** - committed data survives crashes  
+6. **Consistency** - valid state in, valid state out  
 
 ## What is a transaction?
 
 A **transaction** is a group of SQL statements (`SELECT`, `UPDATE`, `INSERT`, and so on) treated as a **single unit of work**.
 
-If a transaction runs five statements, either all five succeed or—if any one fails—the whole unit is rolled back and none of the changes stick.
+If a transaction runs five statements, either all five succeed or-if any one fails-the whole unit is rolled back and none of the changes stick.
 
 Why group statements? Real workflows depend on multiple steps staying in sync. If one step fails mid-way, partial updates leave money, stock, or seats wrong.
 
@@ -41,7 +41,7 @@ Why group statements? Real workflows depend on multiple steps staying in sync. I
 
 If payment fails, the order must not be created. All steps form **one transaction**.
 
-Without a transaction: statement 2 might succeed (money deducted) while statement 4 fails (no order)—money gone, nothing purchased.
+Without a transaction: statement 2 might succeed (money deducted) while statement 4 fails (no order)-money gone, nothing purchased.
 
 ```sql
 BEGIN;
@@ -54,13 +54,13 @@ FOR UPDATE;
 
 -- 2. Deduct money from customer account
 UPDATE customers
-SET balance = balance - 500
+SET balance = balance- 500
 WHERE customer_id = 1
   AND balance >= 500;
 
 -- 3. Reduce stock quantity
 UPDATE products
-SET stock = stock - 1
+SET stock = stock- 1
 WHERE product_id = 101
   AND stock > 0;
 
@@ -123,7 +123,7 @@ In short: a transaction is a bunch of SQL statements executed as one unit. In Po
 
 ## Introduction to ACID
 
-**ACID** properties are guarantees that databases provide so transactions are processed reliably—even when something goes wrong (power loss, crashes, concurrent users).
+**ACID** properties are guarantees that databases provide so transactions are processed reliably-even when something goes wrong (power loss, crashes, concurrent users).
 
 They are a major reason teams choose relational systems such as **PostgreSQL**, **MySQL**, **SQL Server**, and **Oracle**.
 
@@ -172,7 +172,7 @@ A simple transfer:
 ```sql
 BEGIN;
 
-UPDATE accounts SET balance = balance - 500 WHERE name = 'Rohit';
+UPDATE accounts SET balance = balance- 500 WHERE name = 'Rohit';
 UPDATE accounts SET balance = balance + 500 WHERE name = 'Rahul';
 
 COMMIT;
@@ -191,7 +191,7 @@ If five statements are in a transaction and the third fails (network blip, crash
 ```sql
 BEGIN;
 
-UPDATE accounts SET balance = balance - 300 WHERE name = 'Shivam';
+UPDATE accounts SET balance = balance- 300 WHERE name = 'Shivam';
 
 -- Simulate an error
 SELECT 1 / 0;
@@ -201,7 +201,7 @@ UPDATE accounts SET balance = balance + 300 WHERE name = 'Aman';
 COMMIT;
 ```
 
-`SELECT 1 / 0` raises `ERROR: division by zero`. PostgreSQL aborts the transaction. Shivam’s debit is **not** kept—the balance is unchanged.
+`SELECT 1 / 0` raises `ERROR: division by zero`. PostgreSQL aborts the transaction. Shivam’s debit is **not** kept-the balance is unchanged.
 
 Check:
 
@@ -212,7 +212,7 @@ SELECT name, balance FROM accounts WHERE name = 'Shivam';
 
 In production, the “error” might be a process kill or power cut; atomicity still rolls incomplete work back.
 
-Without `BEGIN`/`COMMIT`, the first `UPDATE` could commit on its own while the second never runs—exactly the inconsistent state transactions exist to prevent.
+Without `BEGIN`/`COMMIT`, the first `UPDATE` could commit on its own while the second never runs-exactly the inconsistent state transactions exist to prevent.
 
 ## Isolation
 
@@ -257,7 +257,7 @@ Phantoms change **which rows exist** for a predicate; nonrepeatable reads change
 
 ### Isolation levels
 
-Standard SQL defines four levels. Stricter levels mean stronger consistency—and often more locking or aborts under load. Pick based on the app’s needs.
+Standard SQL defines four levels. Stricter levels mean stronger consistency-and often more locking or aborts under load. Pick based on the app’s needs.
 
 | Isolation level | Dirty read | Nonrepeatable read | Phantom read |
 |-----------------|------------|--------------------|--------------|
@@ -275,10 +275,10 @@ PostgreSQL implements **READ COMMITTED**, **REPEATABLE READ**, and **SERIALIZABL
 Default if you don’t specify a level: no dirty reads; nonrepeatable and phantom reads can still happen.
 
 ```sql
-BEGIN;  -- isolation is READ COMMITTED by default
+BEGIN; -- isolation is READ COMMITTED by default
 
 SELECT balance FROM accounts WHERE id = 1;
-UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance- 100 WHERE id = 1;
 
 COMMIT;
 ```
@@ -307,7 +307,7 @@ UPDATE accounts SET balance = balance + 500 WHERE name = 'Shivam';
 
 ```sql
 SELECT balance FROM accounts WHERE name = 'Shivam';
--- still 5000 — no dirty read of B's uncommitted change
+-- still 5000 - no dirty read of B's uncommitted change
 ```
 
 **Session B:**
@@ -320,14 +320,14 @@ COMMIT;
 
 ```sql
 SELECT balance FROM accounts WHERE name = 'Shivam';
--- now 5500 — nonrepeatable read within the same transaction
+-- now 5500 - nonrepeatable read within the same transaction
 
 COMMIT;
 ```
 
 So at this level: **no dirty reads**, but **nonrepeatable reads** (and phantoms, if you set them up) can appear.
 
-**When to use:** Default for most apps—product browsing, profile updates, typical CRUD. Fine for ~most use cases unless you need a stable snapshot for the whole transaction.
+**When to use:** Default for most apps-product browsing, profile updates, typical CRUD. Fine for ~most use cases unless you need a stable snapshot for the whole transaction.
 
 ### Repeatable Read
 
@@ -337,7 +337,7 @@ Stricter than Read Committed. Within a transaction you see a **stable snapshot**
 BEGIN ISOLATION LEVEL REPEATABLE READ;
 
 SELECT balance FROM accounts WHERE id = 1;
-UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance- 100 WHERE id = 1;
 
 COMMIT;
 ```
@@ -364,13 +364,13 @@ COMMIT;
 
 ```sql
 SELECT balance FROM accounts WHERE name = 'Shivam';
--- still 5500 — snapshot is fixed for this transaction
+-- still 5500 - snapshot is fixed for this transaction
 COMMIT;
 ```
 
 Both selects in A return the same value even though B committed a change in between.
 
-**When to use:** You need a consistent view for the whole transaction—e.g. check availability, then insert a reservation, without mid-flight value changes confusing your logic.
+**When to use:** You need a consistent view for the whole transaction-e.g. check availability, then insert a reservation, without mid-flight value changes confusing your logic.
 
 ### Serializable
 
@@ -379,7 +379,7 @@ Strongest level. The database behaves as if transactions ran **one at a time** (
 ```sql
 BEGIN ISOLATION LEVEL SERIALIZABLE;
 
-UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance- 100 WHERE id = 1;
 UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 
 COMMIT;
@@ -396,23 +396,23 @@ ERROR:  could not serialize access due to concurrent update
 ```sql
 -- T1
 BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
-SELECT balance FROM accounts WHERE id = 1;  -- reads current balance
-UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+SELECT balance FROM accounts WHERE id = 1; -- reads current balance
+UPDATE accounts SET balance = balance- 100 WHERE id = 1;
 
 -- T2 (overlapping)
 BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
-UPDATE accounts SET balance = balance - 200 WHERE id = 1;
-COMMIT;  -- succeeds
+UPDATE accounts SET balance = balance- 200 WHERE id = 1;
+COMMIT; -- succeeds
 
 -- T1
-COMMIT;  -- may fail with serialization error
+COMMIT; -- may fail with serialization error
 ```
 
 If T1 read a row and T2 modified that row concurrently, PostgreSQL may abort T1 so the result still matches some serial order of the two transactions.
 
 Application code should **retry** failed serializable transactions when that error appears.
 
-**When to use:** Payments, inventory allocation, financial ledgers—places where incorrect interleaving is worse than occasional retries.
+**When to use:** Payments, inventory allocation, financial ledgers-places where incorrect interleaving is worse than occasional retries.
 
 ## Durability
 
@@ -437,7 +437,7 @@ Internals of WAL and checkpoints go deep; for ACID, remember that durability is 
 
 ## Consistency
 
-**Consistency** means every committed transaction takes the database from one **valid** state to another valid state—respecting schema rules, constraints, and business invariants.
+**Consistency** means every committed transaction takes the database from one **valid** state to another valid state-respecting schema rules, constraints, and business invariants.
 
 Rules include:
 
@@ -457,8 +457,8 @@ CREATE TABLE accounts (
     balance INT CHECK (balance >= 0)
 );
 
-INSERT INTO accounts (balance) VALUES (100);  -- ok
-INSERT INTO accounts (balance) VALUES (-50);  -- ERROR: violates CHECK constraint
+INSERT INTO accounts (balance) VALUES (100); -- ok
+INSERT INTO accounts (balance) VALUES (-50); -- ERROR: violates CHECK constraint
 ```
 
 A statement that violates a constraint aborts (and with a multi-statement transaction, you roll back the unit). That keeps balances and references valid.
@@ -486,10 +486,10 @@ FOR EACH ROW EXECUTE FUNCTION ensure_balance();
 INSERT INTO accounts (name, balance) VALUES ('Mohit', 100);
 -- ok
 
-INSERT INTO accounts (name, balance) VALUES ('Messi', -50);
+INSERT INTO accounts (name, balance) VALUES ('Messi',-50);
 -- ERROR: Balance cannot be negative
 
-UPDATE accounts SET balance = -20 WHERE id = 1;
+UPDATE accounts SET balance =-20 WHERE id = 1;
 -- ERROR: Balance cannot be negative
 ```
 
@@ -504,7 +504,7 @@ Any transaction that breaks the rule is rejected so the database stays consisten
 | **Isolation** | Default to Read Committed; raise the level when concurrent bugs show up |
 | **Durability** | Trust `COMMIT` only after it succeeds; design retries for serialization failures |
 
-Transactions turn several SQL statements into one reliable unit. ACID is why that unit stays correct under errors and concurrency—the reason banking-style transfers and seat bookings can be implemented safely on PostgreSQL.
+Transactions turn several SQL statements into one reliable unit. ACID is why that unit stays correct under errors and concurrency-the reason banking-style transfers and seat bookings can be implemented safely on PostgreSQL.
 
 ## Further reading
 

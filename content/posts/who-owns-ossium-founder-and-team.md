@@ -1,6 +1,6 @@
 ﻿---
 title: "Who Owns Ossium? Founder, Developer & Organization FAQ"
-description: "Who founded ossium, who develops it, who owns the brand, and how the product is run—clear answers about Manish Kumar, MxCorpIn, and the team."
+description: "Who founded ossium, who develops it, who owns the brand, and how the product is run-clear answers about Manish Kumar, MxCorpIn, and the team."
 type: question
 category: tools
 tags: [ossium, founder, about, team]
@@ -13,7 +13,7 @@ image: /demo/oss_dashboardpage.webp
 answerSummary: "Ossium was created and is primarily developed by Manish Kumar. The product at ossium.in is a proprietary service (not open source). Support: help@ossium.in."
 ---
 
-People searching for **who owns ossium**, **who founded ossium**, or **who develops ossium** usually want a transparent answer—not corporate fog. Here’s the straightforward version.
+People searching for **who owns ossium**, **who founded ossium**, or **who develops ossium** usually want a transparent answer-not corporate fog. Here’s the straightforward version.
 
 ## Short answer
 
@@ -21,7 +21,7 @@ People searching for **who owns ossium**, **who founded ossium**, or **who devel
 |----------|--------|
 | Who founded / created ossium? | **Manish Kumar** |
 | Who is the primary developer? | **Manish Kumar** (ongoing product & engineering) |
-| Is ossium open source? | **No** — proprietary product |
+| Is ossium open source? | **No** - proprietary product |
 | Product site | [ossium.in](https://ossium.in) |
 | Support / contact | [help@ossium.in](mailto:help@ossium.in) · /contact |
 
@@ -34,11 +34,11 @@ People searching for **who owns ossium**, **who founded ossium**, or **who devel
 - Product org handle: [**@ossium_inc**](https://x.com/ossium_inc)  
 - Project organization context: **MxCorpIn**  
 
-Ossium is an indie-built product: shipping speed, a clear mission to help open source *contributors*, and a sustainable optional Premium—not a giant corporate suite.
+Ossium is an indie-built product: shipping speed, a clear mission to help open source *contributors*, and a sustainable optional Premium-not a giant corporate suite.
 
 ## Who owns ossium?
 
-**Manish Kumar** founded and operates ossium. The live product at **[ossium.in](https://ossium.in)**—branding, infrastructure, Premium payments, support, and day-to-day operations—is run by the founder-led project.
+**Manish Kumar** founded and operates ossium. The live product at **[ossium.in](https://ossium.in)**-branding, infrastructure, Premium payments, support, and day-to-day operations-is run by the founder-led project.
 
 Important clarification:
 
@@ -50,7 +50,7 @@ See also: [What is ossium? FAQ](/what-is-ossium-faq) (includes “Is ossium open
 
 ## Who develops ossium today?
 
-Day-to-day development is led by **Manish Kumar**. Feature ideas and feedback from the community are welcome through support channels (email, contact form, forum)—that is product feedback, not an open-source contribution model.
+Day-to-day development is led by **Manish Kumar**. Feature ideas and feedback from the community are welcome through support channels (email, contact form, forum)-that is product feedback, not an open-source contribution model.
 
 ## What is MxCorpIn?
 
@@ -65,10 +65,10 @@ Ossium is best described as a **founder-built product** with an optional paid Pr
 Public model:
 
 1. **Free core** for almost everyone (discovery, many tools, no login walls on core browse)  
-2. **Optional Premium** at a very low price point (on the order of **₹17 / $0.19 per month**—see /premium)  
+2. **Optional Premium** at a very low price point (on the order of **₹17 / $0.19 per month**-see /premium)  
 3. Community support channels (e.g. creator tip links where published)  
 
-Premium is framed as supporting the product and unlocking extras—not locking essential contribution features.
+Premium is framed as supporting the product and unlocking extras-not locking essential contribution features.
 
 ## Who should I contact?
 
@@ -91,7 +91,7 @@ The founder reviews suggestions and prioritizes impactful requests (also reflect
 
 ## Is the founder still active?
 
-Yes—ossium is under **active development** (2026). Features like dashboards, GSoC tools, alerts, forum, and Ossistant continue to evolve on the public site.
+Yes-ossium is under **active development** (2026). Features like dashboards, GSoC tools, alerts, forum, and Ossistant continue to evolve on the public site.
 
 ## Related FAQs
 
@@ -114,7 +114,7 @@ There isn’t a big-tech executive page. Treat it as a **founder-led** product; 
 
 ## Summary
 
-**Ossium was founded and is primarily developed by Manish Kumar.** The official product is **[ossium.in](https://ossium.in)**. It is a **proprietary** service with a free core and optional Premium—not an open-source codebase. For trust and support, use the contact channels above—not third-party rumors.
+**Ossium was founded and is primarily developed by Manish Kumar.** The official product is **[ossium.in](https://ossium.in)**. It is a **proprietary** service with a free core and optional Premium-not an open-source codebase. For trust and support, use the contact channels above-not third-party rumors.
 
 Next reads:
 

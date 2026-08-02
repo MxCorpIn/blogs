@@ -1,6 +1,6 @@
 ﻿---
 title: "What Is Ossium? Free OSS Helper FAQ (Pricing, Features & Use Cases)"
-description: "What is ossium, what is it used for, is it free, and is ossium open source? Clear answers: free core product for discovering open source work and running GitHub Selfbot—not an open-source codebase."
+description: "What is ossium, what is it used for, is it free, and is ossium open source? Clear answers: free core product for discovering open source work and running GitHub Selfbot-not an open-source codebase."
 type: question
 category: tools
 tags: [ossium, faq, free-tools, github]
@@ -9,11 +9,11 @@ publishedAt: 2026-07-11
 updatedAt: 2026-07-21
 author: ossium
 featured: true
-image: /demo/oss_landingpage.webp
+ 
 answerSummary: "Ossium is a free-to-use web platform that helps developers discover open source projects, find issues, run GitHub Selfbot on their repos, explore GSoC orgs, and contribute faster. Core features are free; optional Premium starts around ₹17 or $0.19 per month. Ossium itself is not open source."
 ---
 
-**Ossium** (often written **ossium**) is *The True OSS Helper*—a fast web platform for discovering open source work, contributing on GitHub, and helping maintainers welcome people to their repos.
+**Ossium** (often written **ossium**) is *The True OSS Helper*-a fast web platform for discovering open source work, contributing on GitHub, and helping maintainers welcome people to their repos.
 
 This page answers the questions people actually search for: what it is, who it’s for, whether it’s free, whether **ossium itself** is open source, and how to start.
 
@@ -55,7 +55,7 @@ Typical users: students preparing for GSoC/Hacktoberfest, working developers who
 
 ## Is ossium free?
 
-**Yes—the core product is free.**
+**Yes-the core product is free.**
 
 From the product FAQ and public docs:
 
@@ -66,7 +66,7 @@ From the product FAQ and public docs:
 
 ### What about Premium?
 
-**Ossium Premium** is optional. It supports sustainability and unlocks extras (for example advanced alert rules, priority support, and early access—exact perks can evolve).
+**Ossium Premium** is optional. It supports sustainability and unlocks extras (for example advanced alert rules, priority support, and early access-exact perks can evolve).
 
 Public pricing has been positioned around:
 
@@ -116,7 +116,7 @@ See a dedicated comparison: [Ossium vs GitHub Explore](/ossium-vs-github-explore
 
 ## Can I add my open source project to ossium?
 
-Yes—if it meets the criteria. Read Eligibility, then submit for review. Listings are reviewed so the catalog stays useful (active, properly licensed open source, etc.).
+Yes-if it meets the criteria. Read Eligibility, then submit for review. Listings are reviewed so the catalog stays useful (active, properly licensed open source, etc.).
 
 ## Is Ossistant free?
 
@@ -140,7 +140,7 @@ Yes—if it meets the criteria. Read Eligibility, then submit for review. Listin
 ## Short FAQ recap
 
 ### What is ossium in one sentence?
-A free web platform that helps you discover open source projects, track contributions, and prepare for programs like GSoC—without drowning in GitHub noise.
+A free web platform that helps you discover open source projects, track contributions, and prepare for programs like GSoC-without drowning in GitHub noise.
 
 ### Is ossium free forever for core features?
 Yes. Core discovery and contribution workflows are free; Premium is optional support + extras.

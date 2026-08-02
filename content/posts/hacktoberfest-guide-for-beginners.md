@@ -9,7 +9,7 @@ publishedAt: 2026-05-15
 author: ossium
 ---
 
-**Hacktoberfest** is an annual October event that encourages open source contributions. It’s a great on-ramp—if you treat it as practice in *quality* contributions, not a race for empty PRs.
+**Hacktoberfest** is an annual October event that encourages open source contributions. It’s a great on-ramp-if you treat it as practice in *quality* contributions, not a race for empty PRs.
 
 ## What beginners should optimize for
 
@@ -32,7 +32,7 @@ Prefer:
 - Issues labeled for newcomers ([what good first issues are](/what-are-good-first-issues))  
 - Docs fixes that reduce confusion  
 - Bugs you can reproduce  
-- Projects that opted into Hacktoberfest (rules change by year—check the official site)  
+- Projects that opted into Hacktoberfest (rules change by year-check the official site)  
 
 Use ossium’s issue finder and trending to discover active repos instead of random tag spam.
 
@@ -56,4 +56,4 @@ Use ossium’s issue finder and trending to discover active repos instead of ran
 
 Keep the habit. Track ongoing work on GitHub, explore OSS programs, and level up toward mentorship programs like [GSoC](/what-is-google-summer-of-code-gsoc).
 
-October can be the start of a year-round contribution practice—not a one-month trophy hunt.
+October can be the start of a year-round contribution practice-not a one-month trophy hunt.

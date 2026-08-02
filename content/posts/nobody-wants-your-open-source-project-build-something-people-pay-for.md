@@ -1,6 +1,6 @@
 ﻿---
 title: "Nobody Wants Your Open Source Project. Build Something People Pay For."
-description: "Most GitHub projects get zero users. Why open source traction is survivorship bias—and when building a paid product teaches you more than stars."
+description: "Most GitHub projects get zero users. Why open source traction is survivorship bias-and when building a paid product teaches you more than stars."
 type: article
 category: career
 tags: [open-source, career, side-projects, product, github]
@@ -22,13 +22,13 @@ That is the story of most open source projects, and few people admit it.
 
 **The reality:** You push it. Zero stars. Nobody is browsing for your repo among hundreds of millions of repositories. You share on Reddit; one "nice project" comment, no engagement. Two years later: one contributor (you), one star (also you).
 
-Well-built, well-documented, completely ignored—this is common, not rare.
+Well-built, well-documented, completely ignored-this is common, not rare.
 
 ## Why this happens
 
 Successful open source projects with thousands of stars solve problems **thousands of developers already have**. They spread because someone at a company hits a problem, searches, finds the project, and adopts it because it saves real time.
 
-Your weekend project that solves *your* problem will not get that traction unless you coincidentally solved a widely shared pain—and even then you still need distribution. Discovery on GitHub is near zero unless something hits Hacker News or Reddit.
+Your weekend project that solves *your* problem will not get that traction unless you coincidentally solved a widely shared pain-and even then you still need distribution. Discovery on GitHub is near zero unless something hits Hacker News or Reddit.
 
 What you see on the internet is **survivorship bias**. For every project with 10,000 stars, there are orders of magnitude with zero.
 
@@ -44,7 +44,7 @@ When builders switch from ignored open source tools to paid products, three thin
 
 ## Open source is still valuable
 
-None of this argues that open source is bad or that you should not contribute. The ecosystem depends on it. People who maintain critical projects do important work—often funded, sponsored, or at personal cost.
+None of this argues that open source is bad or that you should not contribute. The ecosystem depends on it. People who maintain critical projects do important work-often funded, sponsored, or at personal cost.
 
 What *is* misleading is the idea that pushing things to GitHub "will work out." Most maintainers burn out. Most projects die.
 
@@ -53,15 +53,15 @@ What *is* misleading is the idea that pushing things to GitHub "will work out." 
 
 ## Skills overlap more than you think
 
-A paid product still requires code, bugs, architecture, and user empathy—plus pricing, marketing, support, and sustainability. A developer with 100 paying customers has practiced a fuller software lifecycle than one with 100 GitHub stars. Both are developers; only one has run the full cycle of software people depend on commercially.
+A paid product still requires code, bugs, architecture, and user empathy-plus pricing, marketing, support, and sustainability. A developer with 100 paying customers has practiced a fuller software lifecycle than one with 100 GitHub stars. Both are developers; only one has run the full cycle of software people depend on commercially.
 
 ## What to do with limited side-project time
 
 Before the next evening/weekend project, ask: **Will anyone pay for this?** Not "is it cool?" Not "does it look good on a resume?"
 
-- If **no**, and you are building for fun—fine. Enjoy it and learn. Do not expect impact or income.  
-- If **maybe**—ship the smallest version in a week and try to sell it. The market answers faster than planning.  
+- If **no**, and you are building for fun-fine. Enjoy it and learn. Do not expect impact or income.  
+- If **maybe**-ship the smallest version in a week and try to sell it. The market answers faster than planning.  
 
-You do not need to stop contributing to open source. You do not need to become a hustle caricature. Be honest about *what* you are building and *why*. Impact and income → build for customers. Fun and learning → build whatever you want—just know which game you are playing.
+You do not need to stop contributing to open source. You do not need to become a hustle caricature. Be honest about *what* you are building and *why*. Impact and income → build for customers. Fun and learning → build whatever you want-just know which game you are playing.
 
 Related reading on [ossium](/): how to [find projects](/how-to-find-open-source-projects-for-beginners), [contribute on GitHub](/how-to-contribute-to-open-source-on-github), and GitHub Selfbot for maintainers.

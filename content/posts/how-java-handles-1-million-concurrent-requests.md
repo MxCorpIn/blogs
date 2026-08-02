@@ -1,6 +1,6 @@
 ---
 title: "How Java Handles 1 Million Concurrent Requests"
-description: "How modern Java backends handle massive concurrency—thread pools, NIO, async queues, horizontal scaling, JVM tuning, and caching—not one thread per request."
+description: "How modern Java backends handle massive concurrency-thread pools, NIO, async queues, horizontal scaling, JVM tuning, and caching-not one thread per request."
 type: article
 category: tools
 tags: [java, concurrency, backend, spring-boot, performance]
@@ -15,7 +15,7 @@ A common interview and architecture question:
 
 > **Can Java really handle 1 million concurrent requests?**
 
-**Yes**—but not by spawning a million threads.
+**Yes**-but not by spawning a million threads.
 
 Many people still imagine:
 
@@ -46,7 +46,7 @@ Typical path:
 Client → Load Balancer → Web Server → Application
 ```
 
-Spring Boot commonly runs on **Tomcat**, **Jetty**, **Undertow**, or **Netty**—servers built to manage many connections efficiently.
+Spring Boot commonly runs on **Tomcat**, **Jetty**, **Undertow**, or **Netty**-servers built to manage many connections efficiently.
 
 ### Traditional model: thread per request
 
@@ -216,6 +216,6 @@ Java and the JVM give you the tools; **design** decides whether you use them wel
 
 ## Final thoughts
 
-Companies like Netflix, LinkedIn, Uber, and many large banks still run huge JVM fleets. One million concurrent requests isn’t magic—it’s concurrency models, queues, caches, and scale-out working together.
+Companies like Netflix, LinkedIn, Uber, and many large banks still run huge JVM fleets. One million concurrent requests isn’t magic-it’s concurrency models, queues, caches, and scale-out working together.
 
 > **Scalability is less about the language and more about the design behind it.**

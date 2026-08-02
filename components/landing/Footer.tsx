@@ -77,7 +77,7 @@ export default function Footer() {
                 />
               </Link>
               <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed max-w-sm">
-                The ossium blog — practical guides on open source contribution,
+                The ossium blog - practical guides on open source contribution,
                 GSoC, first PRs, and the tools that get you unstuck.
               </p>
             </div>

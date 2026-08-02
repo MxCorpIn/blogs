@@ -1,6 +1,6 @@
 ---
 title: "How to Handle Secrets: From .env Files to Enterprise Vaults"
-description: "A practical guide to managing API keys and credentials—from hobby .env hygiene to secrets managers, CI/CD, Kubernetes, and AI tooling risks."
+description: "A practical guide to managing API keys and credentials-from hobby .env hygiene to secrets managers, CI/CD, Kubernetes, and AI tooling risks."
 type: guide
 category: tools
 tags: [security, secrets, devops, kubernetes, ci-cd]
@@ -12,7 +12,7 @@ featured: false
 draft: false
 ---
 
-Every few weeks the same question shows up: how do teams share `.env` variables securely? The answer depends on your threat model—but the principles stay the same from side projects to regulated production.
+Every few weeks the same question shows up: how do teams share `.env` variables securely? The answer depends on your threat model-but the principles stay the same from side projects to regulated production.
 
 This guide covers a senior-engineer approach for personal and professional work: what goes wrong when secrets leak, three laws of secrets management, right-sized tools by context, CI/CD and Kubernetes pitfalls, and new risks from AI coding assistants.
 
@@ -24,11 +24,11 @@ Except you forgot `.gitignore` before the first commit. Or a teammate cloned the
 
 ```bash
 # What you THINK you did
-echo ".env" >> .gitignore && git add . && git commit -m "init"
+echo ".env" >> .gitignore && git add . && git commit-m "init"
 
 # What git actually stored... forever
-git log --all --full-history -- "**/.env"
-# commit a3f9b2c1 (HEAD -> main)
+git log--all--full-history-- "**/.env"
+# commit a3f9b2c1 (HEAD-> main)
 # feat: add payment integration
 
 git show a3f9b2c1:.env
@@ -41,15 +41,15 @@ git show a3f9b2c1:.env
 # Those secrets are in every clone, every fork, every mirror.
 ```
 
-GitGuardian's 2024 report detected over 12.8 million secrets leaked on GitHub in a single year—a 28% year-over-year increase. The most common: API keys, credentials, and private certificates committed directly to repositories.
+GitGuardian's 2024 report detected over 12.8 million secrets leaked on GitHub in a single year-a 28% year-over-year increase. The most common: API keys, credentials, and private certificates committed directly to repositories.
 
 ## What actually happens when secrets leak
 
-Concrete attack vectors—including ones the AI era introduced:
+Concrete attack vectors-including ones the AI era introduced:
 
 - **Automated secret scanning:** Bots scrape GitHub, GitLab, and npm for high-entropy strings matching known API key patterns. Exposure window: seconds, not hours.
-- **Docker layer exposure:** Passing secrets via `ENV` in Dockerfiles bakes them into image layers. A later `RUN unset` does not remove them—values show in `docker history`.
-- **Log injection:** Logging request headers, errors, or environment dumps writes secrets to Datadog, Sentry, CloudWatch—your monitoring stack becomes a secret store.
+- **Docker layer exposure:** Passing secrets via `ENV` in Dockerfiles bakes them into image layers. A later `RUN unset` does not remove them-values show in `docker history`.
+- **Log injection:** Logging request headers, errors, or environment dumps writes secrets to Datadog, Sentry, CloudWatch-your monitoring stack becomes a secret store.
 - **Insider and offboarding risk:** A laptop with production `.env` leaves with the person unless you rotate after offboarding.
 - **Supply chain attacks:** A compromised dependency can read `process.env` and exfiltrate secrets at runtime.
 - **Cloud misconfiguration:** Public S3 buckets, exposed instance metadata, and Kubernetes Secrets that are only base64-encoded (not encrypted) are easy targets.
@@ -117,8 +117,8 @@ npx dotenv-vault@latest new
 npx dotenv-vault@latest push
 npx dotenv-vault@latest pull
 
-# OR: 1Password CLI — inject at runtime
-op run --env-file=.env.template -- node server.js
+# OR: 1Password CLI - inject at runtime
+op run--env-file=.env.template-- node server.js
 ```
 
 Install **gitleaks** (or git-secrets) as a pre-commit hook. It blocks high-entropy strings and known key patterns before they land in history:
@@ -126,10 +126,10 @@ Install **gitleaks** (or git-secrets) as a pre-commit hook. It blocks high-entro
 ```yaml
 # .pre-commit-config.yaml
 repos:
-  - repo: https://github.com/gitleaks/gitleaks
+ - repo: https://github.com/gitleaks/gitleaks
     rev: v8.18.0
     hooks:
-      - id: gitleaks
+     - id: gitleaks
 ```
 
 ### Startups and small teams
@@ -138,10 +138,10 @@ Threat model: everything above, plus offboarding, multi-environment sprawl, cont
 
 Use a managed secrets manager as the single source of truth:
 
-- **AWS Secrets Manager** — rotation for RDS and peers; deep IAM. Best for AWS-native stacks.
-- **Doppler** — team UI, per-env configs, CLI injection, CI integrations. Strong DX for startups.
-- **Infisical (OSS)** — self-hostable, E2E encrypted. Good open-source option.
-- **1Password Teams** — secret references and `op run` injection if the team already uses 1Password.
+- **AWS Secrets Manager** - rotation for RDS and peers; deep IAM. Best for AWS-native stacks.
+- **Doppler** - team UI, per-env configs, CLI injection, CI integrations. Strong DX for startups.
+- **Infisical (OSS)** - self-hostable, E2E encrypted. Good open-source option.
+- **1Password Teams** - secret references and `op run` injection if the team already uses 1Password.
 
 Inject secrets at **runtime**, never at build time:
 
@@ -149,13 +149,13 @@ Inject secrets at **runtime**, never at build time:
 jobs:
   deploy:
     steps:
-      - name: Install Doppler
-        run: curl -Ls https://cli.doppler.com/install.sh | sh
+     - name: Install Doppler
+        run: curl-Ls https://cli.doppler.com/install.sh | sh
 
-      - name: Deploy with secrets
+     - name: Deploy with secrets
         env:
           DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
-        run: doppler run -- ./deploy.sh
+        run: doppler run-- ./deploy.sh
 
 # Only ONE secret (DOPPLER_TOKEN) lives in GitHub.
 # Real secrets are fetched at runtime from Doppler.
@@ -165,7 +165,7 @@ jobs:
 
 Threat model: SOC2 / HIPAA / PCI-DSS, audit trails, zero-trust, short-lived credentials, multi-region HA.
 
-HashiCorp Vault is the usual gold standard—dynamic credentials instead of static passwords:
+HashiCorp Vault is the usual gold standard-dynamic credentials instead of static passwords:
 
 ```bash
 # App authenticates with its service identity
@@ -199,12 +199,12 @@ db_password = client.get_secret("prod-db-password").value
 
 ## The CI/CD pipeline is your biggest attack surface
 
-Pipelines need secrets to deploy—so they are high-value targets.
+Pipelines need secrets to deploy-so they are high-value targets.
 
 - Do not hardcode secrets in pipeline YAML.
 - Never print environment variables in logs.
-- Never use `set -x` in scripts that handle secrets.
-- Avoid Docker build args for secrets—they end up in plaintext history.
+- Never use `set-x` in scripts that handle secrets.
+- Avoid Docker build args for secrets-they end up in plaintext history.
 
 ```bash
 # BAD: bakes the key into every image layer
@@ -217,13 +217,13 @@ Mount secrets at build time instead:
 
 ```dockerfile
 # syntax=docker/dockerfile:1
-RUN --mount=type=secret,id=api_key \
+RUN--mount=type=secret,id=api_key \
   export OPENAI_API_KEY=$(cat /run/secrets/api_key) && \
   ./setup.sh
 ```
 
 ```bash
-docker build --secret id=api_key,src=.env .
+docker build--secret id=api_key,src=.env .
 ```
 
 Use platform secrets (GitHub Actions Secrets, GitLab CI Variables, CircleCI Contexts). Mask values in logs. Scope secrets per environment. Prefer OIDC federation so you do not store long-lived cloud keys:
@@ -233,7 +233,7 @@ permissions:
   id-token: write # Required for OIDC
 
 steps:
-  - name: Configure AWS credentials via OIDC
+ - name: Configure AWS credentials via OIDC
     uses: aws-actions/configure-aws-credentials@v4
     with:
       role-to-assume: arn:aws:iam::123:role/GitHubDeployRole
@@ -248,10 +248,10 @@ steps:
 Kubernetes Secrets are base64-encoded, not encrypted. Anyone with `kubectl get secret` and a decoder has the credentials:
 
 ```bash
-kubectl get secret my-app-secrets -o jsonpath='{.data.db-password}'
+kubectl get secret my-app-secrets-o jsonpath='{.data.db-password}'
 # cGFzc3dvcmQxMjM=
 
-echo "cGFzc3dvcmQxMjM=" | base64 -d
+echo "cGFzc3dvcmQxMjM=" | base64-d
 # password123
 ```
 
@@ -276,7 +276,7 @@ spec:
   target:
     name: payment-secrets
   data:
-    - secretKey: db-password
+   - secretKey: db-password
       remoteRef:
         key: prod/payment-service/db
         property: password
@@ -284,7 +284,7 @@ spec:
 
 ## AI tools expand the threat surface
 
-Working with AI assistants does not mean abandoning hygiene—it means being explicit about new risks.
+Working with AI assistants does not mean abandoning hygiene-it means being explicit about new risks.
 
 - Never paste real credentials into AI chat. Replace with placeholders (`sk_live_abc123` → `sk_live_YOUR_KEY`).
 - Configure ignore lists so `.env`, `*.pem`, and credential dirs are not indexed by Cursor, Copilot, etc.

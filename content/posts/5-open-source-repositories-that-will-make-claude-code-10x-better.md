@@ -11,7 +11,7 @@ author: ossium
 featured: false
 ---
 
-Claude Code (and similar coding agents) can architect, write, and ship features quickly. Running them **out of the box**—no memory, no process, no security review—is leaving most of the value on the table.
+Claude Code (and similar coding agents) can architect, write, and ship features quickly. Running them **out of the box**-no memory, no process, no security review-is leaving most of the value on the table.
 
 The open-source community fills that gap: memory layers, specialized workflows, and security gates that turn a forgetful chatbot into something closer to an engineering partner. The noise is loud; many wrappers only burn context. These five repos are the ones worth starting with when you need production-grade discipline.
 
@@ -51,7 +51,7 @@ Useful when a single “do everything” agent keeps missing product or QA gaps.
 
 **Repo:** [safishamsi/graphify](https://github.com/safishamsi/graphify)
 
-Each new session, naive agents re-read huge swaths of the repo—slow and token-heavy.
+Each new session, naive agents re-read huge swaths of the repo-slow and token-heavy.
 
 **Graphify** turns the workspace into a **queryable knowledge graph** of dependencies and relationships so the agent can pull precise nodes instead of brute-force file dumps.
 
@@ -67,7 +67,7 @@ Best when token limits or slow “reread the monorepo” sessions are the bottle
 
 **Repo:** [garrytan/gbrain](https://github.com/garrytan/gbrain)
 
-Graphify is memory for **code**. **GBrain** is memory for **your operating context**: notes, meetings, people, companies—synthesis with citations rather than bare search links.
+Graphify is memory for **code**. **GBrain** is memory for **your operating context**: notes, meetings, people, companies-synthesis with citations rather than bare search links.
 
 **How to use it**
 

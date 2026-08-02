@@ -1,6 +1,6 @@
 ---
 title: "12 Core OOP Concepts Every Software Developer Should Understand"
-description: "Beginner-friendly OOP: classes, objects, interfaces, encapsulation, inheritance, polymorphism, abstraction, composition, and more—with Java examples."
+description: "Beginner-friendly OOP: classes, objects, interfaces, encapsulation, inheritance, polymorphism, abstraction, composition, and more-with Java examples."
 type: guide
 category: beginners
 tags: [oop, java, programming, software-design, beginners]
@@ -11,7 +11,7 @@ author: ossium
 featured: false
 ---
 
-Object-oriented programming (OOP) can sound heavy at first—classes, objects, inheritance, polymorphism, abstraction. Underneath the jargon is a simple idea: **organize code around real-world things** instead of scattering data and logic across unrelated functions.
+Object-oriented programming (OOP) can sound heavy at first-classes, objects, inheritance, polymorphism, abstraction. Underneath the jargon is a simple idea: **organize code around real-world things** instead of scattering data and logic across unrelated functions.
 
 In a real project you model users, orders, payments, products, carts, invoices, and notifications. OOP keeps related data and related actions together so the codebase stays easier to understand, change, test, and maintain as it grows.
 
@@ -21,9 +21,9 @@ OOP is not only “create objects.” It is how you model problems, manage compl
 
 ### 1. Classes
 
-A **class** is a blueprint. It defines what data an object will hold and what actions it can perform. It does not represent one concrete thing by itself—only the structure.
+A **class** is a blueprint. It defines what data an object will hold and what actions it can perform. It does not represent one concrete thing by itself-only the structure.
 
-Think of a car. A car has information (`brand`, `color`, `speed`) and actions (`start`, `stop`, `increaseSpeed`). A house blueprint shows rooms and walls; you cannot live in the blueprint—you build a house from it. Same idea: the class is the plan; objects are the instances.
+Think of a car. A car has information (`brand`, `color`, `speed`) and actions (`start`, `stop`, `increaseSpeed`). A house blueprint shows rooms and walls; you cannot live in the blueprint-you build a house from it. Same idea: the class is the plan; objects are the instances.
 
 ```java
 public class Car {
@@ -47,12 +47,12 @@ public class Car {
     }
 
     public String getDetails() {
-        return brand + " - " + color;
+        return brand + "- " + color;
     }
 }
 ```
 
-`Car` groups data and behavior in one place instead of loose variables and free-floating functions. A class alone is only a template—you use it by creating objects.
+`Car` groups data and behavior in one place instead of loose variables and free-floating functions. A class alone is only a template-you use it by creating objects.
 
 ### 2. Objects
 
@@ -83,7 +83,7 @@ Raising `car1`’s speed does not change `car2`. Starting `car2` does not start 
 
 An **interface** is a contract. It declares which methods a class must provide, without prescribing how they work. The class chooses the implementation.
 
-Example: a notification system that can send email, SMS, WhatsApp, or push messages. Different channels, one shared job—send a message:
+Example: a notification system that can send email, SMS, WhatsApp, or push messages. Different channels, one shared job-send a message:
 
 ```java
 public interface NotificationService {
@@ -130,7 +130,7 @@ public class AlertManager {
 }
 ```
 
-`AlertManager` does not care whether delivery is email, SMS, or WhatsApp. Switching channels means passing a different implementation—not rewriting `AlertManager`:
+`AlertManager` does not care whether delivery is email, SMS, or WhatsApp. Switching channels means passing a different implementation-not rewriting `AlertManager`:
 
 ```java
 NotificationService email = new EmailNotification();
@@ -159,7 +159,7 @@ public class PushNotification implements NotificationService {
 
 ### 4. Encapsulation
 
-**Encapsulation** keeps data and methods together in a class and prevents other code from freely mutating internal state. Important fields sit behind controlled access—like a safe you open only with the right keys.
+**Encapsulation** keeps data and methods together in a class and prevents other code from freely mutating internal state. Important fields sit behind controlled access-like a safe you open only with the right keys.
 
 A bank account has a holder name and balance, plus deposit, withdraw, and check-balance operations. If `balance` is public, invalid updates are trivial:
 
@@ -172,7 +172,7 @@ public class BankAccount {
 BankAccount account = new BankAccount();
 account.accountHolder = "Shivam";
 account.balance = 5000;
-account.balance = -10000; // invalid, but allowed
+account.balance =-10000; // invalid, but allowed
 ```
 
 With encapsulation, fields are private and change only through validated methods:
@@ -198,7 +198,7 @@ public class BankAccount {
 
     public void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
-            balance = balance - amount;
+            balance = balance- amount;
             System.out.println("Withdrawn: " + amount);
         } else {
             System.out.println("Invalid withdrawal amount.");
@@ -220,7 +220,7 @@ BankAccount account = new BankAccount("Shivam", 5000);
 account.deposit(2000);
 account.withdraw(1000);
 System.out.println(account.getBalance());
-// account.balance = -10000; // not allowed
+// account.balance =-10000; // not allowed
 ```
 
 The class owns the rules. Later you can add minimum balance, fees, or daily limits inside `BankAccount` without teaching every caller those details. **Encapsulation protects data by controlling how it is accessed and changed.**
@@ -370,8 +370,8 @@ Do not inherit only to reuse a few lines of code. If the relationship is not nat
 
 Two common forms:
 
-1. **Compile-time polymorphism** — same method name, different parameters (**method overloading**)
-2. **Runtime polymorphism** — subclasses (or interface implementations) override a method (**method overriding**)
+1. **Compile-time polymorphism** - same method name, different parameters (**method overloading**)
+2. **Runtime polymorphism** - subclasses (or interface implementations) override a method (**method overriding**)
 
 Runtime polymorphism shows up constantly in real code:
 
@@ -735,7 +735,7 @@ public class RobotDelivery implements DeliveryPartner {
 ## How the 12 concepts fit together
 
 | Concept | One-line idea |
-| --- | --- |
+|--- |--- |
 | Class | Blueprint for data and behavior |
 | Object | Concrete instance of a class |
 | Interface | Contract of required behavior |
@@ -753,4 +753,4 @@ public class RobotDelivery implements DeliveryPartner {
 
 Once these ideas click, you will spot them in backends, mobile apps, frameworks, design patterns, and low-level design interviews.
 
-Practice with small examples and map them to real domains—accounts, orders, notifications, payments. That is how OOP stops being vocabulary and becomes how you structure software.
+Practice with small examples and map them to real domains-accounts, orders, notifications, payments. That is how OOP stops being vocabulary and becomes how you structure software.
