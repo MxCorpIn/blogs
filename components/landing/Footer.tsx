@@ -66,6 +66,7 @@ export default function Footer() {
             <div className="flex flex-col gap-1.5">
               <Link
                 href="/"
+                aria-label="Ossium - home"
                 className="inline-flex w-fit items-center -ml-1 sm:-ml-1.5"
               >
                 <Image
@@ -75,6 +76,7 @@ export default function Footer() {
                   height={40}
                   className="h-6 sm:h-7 w-auto object-contain object-left"
                 />
+                <span className="sr-only">Ossium - home</span>
               </Link>
               <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed max-w-sm">
                 The ossium blog - practical guides on open source contribution,

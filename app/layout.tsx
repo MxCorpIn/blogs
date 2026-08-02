@@ -41,9 +41,7 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       noimageindex: false,
-      "max-video-preview": -1,
       "max-image-preview": "large",
-      "max-snippet": -1,
     },
   },
   alternates: {
@@ -75,6 +73,8 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         {/* Critical above-the-fold paint (avoids white flash before main CSS) */}
         <style dangerouslySetInnerHTML={{ __html: CRITICAL_CSS }} />
+        {/* AI / LLM discoverability (llmstxt.org) */}
+        <link rel="llms" href="/llms.txt" />
       </head>
       <body className="antialiased" suppressHydrationWarning>
         <div className="relative min-h-screen flex flex-col">

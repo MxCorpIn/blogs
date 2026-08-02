@@ -1,0 +1,41 @@
+# ossium Blog
+
+> Practical guides, how-tos, and Q&A on open source contribution, GSoC, good first issues, GitHub workflows, and tools for developers. The ossium blog helps developers grow their skills through focused, hands-on articles.
+
+## Getting started with open source
+
+- [Why Contribute to Open Source?](https://blog.ossium.in/why-contribute-to-open-source): Benefits of contributing for students and developers.
+- [How to Contribute to Open Source on GitHub](https://blog.ossium.in/how-to-contribute-to-open-source-on-github): A complete workflow for your first contribution.
+- [What Are Good First Issues?](https://blog.ossium.in/what-are-good-first-issues): How to find and complete beginner-friendly issues.
+- [How to Find Open Source Projects as a Beginner](https://blog.ossium.in/how-to-find-open-source-projects-for-beginners): Find projects without getting overwhelmed.
+- [Hacktoberfest Guide for Beginners](https://blog.ossium.in/hacktoberfest-guide-for-beginners): Contribute during Hacktoberfest without the spam.
+- [What Is Google Summer of Code (GSoC)?](https://blog.ossium.in/what-is-google-summer-of-code-gsoc): Guide for students and contributors.
+
+## Tools & guides
+
+- [Best Tools for Open Source Contributors in 2026](https://blog.ossium.in/best-tools-for-open-source-contributors): Curated tooling for open source work.
+- [The Complete Guide to Claude Code: CLAUDE.md](https://blog.ossium.in/the-complete-guide-to-claude-code-claude-md): Get the most out of Claude Code with a well-written CLAUDE.md.
+- [I Used Git Wrong for Years](https://blog.ossium.in/i-used-git-wrong-for-years): Common Git mistakes and how to fix them.
+- [How to Handle Secrets](https://blog.ossium.in/how-to-handle-secrets): From .env files to enterprise vaults.
+
+## Engineering deep dives
+
+- [How Discord Stores Trillions of Messages](https://blog.ossium.in/how-discord-stores-trillions-of-messages-and-what-every-backend-engineer-should-learn-from-it): Backend lessons from Discord's architecture.
+- [How Netflix Handles 260 Million Concurrent Streams](https://blog.ossium.in/how-netflix-handles-260-million-concurrent-streams-without-buffering): Streaming architecture explained.
+- [How Java Handles 1 Million Concurrent Requests](https://blog.ossium.in/how-java-handles-1-million-concurrent-requests): Concurrency patterns in Java.
+- [The Stripe System Design Question](https://blog.ossium.in/the-stripe-system-design-question-that-separates-senior-from-staff-engineers): What separates senior from staff engineers.
+- [ACID Properties Explained](https://blog.ossium.in/acid-properties-explained-a-complete-guide-with-postgresql-implementation): A complete guide with PostgreSQL implementations.
+- [11 Kafka Design Patterns for Every Backend Engineer](https://blog.ossium.in/11-kafka-design-patterns-for-every-backend-engineer): Production Kafka patterns.
+
+## Open source AI & tools
+
+- [5 Open-Source Repositories That Will Make Claude Code 10x Better](https://blog.ossium.in/5-open-source-repositories-that-will-make-claude-code-10x-better): Repositories that supercharge Claude Code.
+- [Open-Source LLMs in 2026](https://blog.ossium.in/open-source-llms-in-2026-the-free-ai-models-everyone-will-be-using-while-you-re-still-overpaying): Free AI models worth using.
+- [Open Source vs Closed AI](https://blog.ossium.in/open-source-vs-closed-ai-an-honest-comparison): An honest comparison.
+- [10 Open-Source Tools Worth Trying in 2026](https://blog.ossium.in/10-open-source-tools-worth-trying-in-2026): Ten tools worth a look this year.
+- [31 New Open Source Tools](https://blog.ossium.in/31-new-open-source-tools): AI, dev and infrastructure picks.
+
+## About
+
+- [What Is Ossium?](https://blog.ossium.in/what-is-ossium-faq): Free OSS helper FAQ - pricing, features and use cases.
+- [Who Owns Ossium?](https://blog.ossium.in/who-owns-ossium-founder-and-team): Founder, developer and organization FAQ.

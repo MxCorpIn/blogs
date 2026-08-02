@@ -272,8 +272,11 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </div>
               )}
               <div className="flex flex-col">
-                <Link href={post.authorUrl!} className="text-[14px] font-semibold text-neutral-900 transition-colors hover:text-neutral-700 hover:underline dark:text-neutral-200 dark:hover:text-neutral-100"
-                   >{post.author}
+                <Link
+                  href={post.authorUrl!}
+                  className="text-[14px] font-semibold text-neutral-900 transition-colors hover:text-neutral-700 hover:underline dark:text-neutral-200 dark:hover:text-neutral-100"
+                >
+                  {post.author}
                 </Link>
                 <span className="flex items-center gap-2 text-[12.5px] text-neutral-500">
                   <time dateTime={post.publishedAt}>

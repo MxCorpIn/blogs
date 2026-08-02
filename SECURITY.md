@@ -28,7 +28,7 @@ window to address it.
 ## Supported versions
 
 | Version | Supported          |
-|-------  |------------------ |
+| ------- | ------------------ |
 | latest  | ✅ Fully supported |
 | older   | ❌ Not supported   |
 

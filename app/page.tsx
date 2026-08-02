@@ -10,7 +10,7 @@ import BlogListing from "./BlogListing";
 export const metadata: Metadata = {
   title: "Blog & Guides | ossium – Open Source Learning Hub",
   description:
-    "Guides, how-tos, and Q&A on open source contribution, GSoC, good first issues, GitHub workflows, and tools for contributors. Learn and rank with practical OSS content.",
+    "Guides, how-tos, and Q&A on open source contribution, GSoC, good first issues, GitHub workflows, and tools for contributors.",
   keywords: [
     "open source blog",
     "contribute to open source",
@@ -57,7 +57,6 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       "max-image-preview": "large",
-      "max-snippet":-1,
     },
   },
 };
@@ -91,11 +90,34 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       "@type": "BlogPosting",
       headline: p.title,
       description: p.description,
+      image: `${APP_URL}/demo/oss_landingpage.webp`,
       url: `${APP_URL}/${p.slug}`,
       datePublished: p.publishedAt,
       dateModified: p.updatedAt ?? p.publishedAt,
+      mainEntityOfPage: `${APP_URL}/${p.slug}`,
       author: { "@type": "Organization", name: p.author },
+      publisher: {
+        "@type": "Organization",
+        name: "ossium",
+        logo: `${APP_URL}/ossium_logo_trans.png`,
+      },
     })),
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "ossium Blog",
+    url: APP_URL,
+    description: "Guides, how-tos, and Q&A for open source contributors.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${APP_URL}/?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 
   return (
@@ -103,6 +125,10 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
       <BlogListing
         posts={all}
