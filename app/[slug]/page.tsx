@@ -253,7 +253,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                   className="h-11 w-11 shrink-0 overflow-hidden rounded-full ring-1 ring-neutral-200 transition-colors hover:ring-neutral-400 dark:ring-neutral-800 dark:hover:ring-neutral-600"
                 >
                   <Image
-                    src="/ossium_logo.webp"
+                    src={post.avatar ?? "/ossium_logo.webp"}
                     alt={post.author}
                     width={44}
                     height={44}
@@ -263,7 +263,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               ) : (
                 <div className="h-11 w-11 shrink-0 overflow-hidden rounded-full ring-1 ring-neutral-200 dark:ring-neutral-800">
                   <Image
-                    src="/ossium_logo.webp"
+                    src={post.avatar ?? "/ossium_logo.webp"}
                     alt={post.author}
                     width={44}
                     height={44}
