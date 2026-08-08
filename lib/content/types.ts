@@ -25,6 +25,8 @@ export interface PostFrontmatter {
   updatedAt?: string;
   author: string;
   authorUrl?: string;
+  /** Author avatar image path (defaults to the ossium logo when absent) */
+  avatar?: string;
   featured?: boolean;
   draft?: boolean;
   /** Optional cover image path or absolute URL */

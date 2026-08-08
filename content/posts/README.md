@@ -23,6 +23,7 @@ publishedAt: 2026-07-11
 updatedAt: 2026-07-11
 author: ossium
 authorUrl: https://ossium.in
+avatar: /logo/opencode-logo-dark.png
 featured: false
 draft: false
 image: /demo/oss_landingpage.webp
@@ -38,6 +39,10 @@ answerSummary: "Only for type=question - short answer for FAQ rich results."
 | `guide` | Long educational content |
 | `howto` | Step-by-step workflows |
 | `question` | FAQ / “What is…” pages (adds FAQ JSON-LD when `answerSummary` is set) |
+
+## Author avatars
+
+- `avatar` is optional. If omitted, the post page shows the ossium logo as the author avatar.
 
 ## Tips for ranking
 

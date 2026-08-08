@@ -66,6 +66,14 @@ describe("toFrontmatter", () => {
     expect(fm.tags).toEqual(["a", "b"]);
     expect(fm.keywords).toEqual(["solo"]);
   });
+
+  it("reads the avatar field and leaves it empty by default", () => {
+    expect(
+      toFrontmatter({ title: "T", avatar: "/logo/opencode-logo-dark.png" }, "t")
+        .avatar,
+    ).toBe("/logo/opencode-logo-dark.png");
+    expect(toFrontmatter({ title: "T" }, "t").avatar).toBeUndefined();
+  });
 });
 
 describe("estimateReadingTime", () => {
