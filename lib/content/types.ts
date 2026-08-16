@@ -14,6 +14,16 @@ export const POST_CATEGORIES = [
 
 export type PostCategory = (typeof POST_CATEGORIES)[number];
 
+export function isPostType(v: unknown): v is PostType {
+  return typeof v === "string" && (POST_TYPES as readonly string[]).includes(v);
+}
+
+export function isPostCategory(v: unknown): v is PostCategory {
+  return (
+    typeof v === "string" && (POST_CATEGORIES as readonly string[]).includes(v)
+  );
+}
+
 export interface PostFrontmatter {
   title: string;
   description: string;

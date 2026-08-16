@@ -79,7 +79,6 @@ export default function SearchOverlay() {
 
   useEffect(() => {
     if (!open) return;
-    setSelected(0);
     const raf = requestAnimationFrame(() => inputRef.current?.focus());
     return () => cancelAnimationFrame(raf);
   }, [open]);

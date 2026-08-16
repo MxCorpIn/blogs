@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import { formatDate } from "@/lib/utils";
 import {
   Briefcase,
   CircleHelp,
@@ -55,27 +56,6 @@ interface BlogListingProps {
   initialQuery?: string;
 }
 
-const MONTHS = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-] as const;
-
-function formatDate(iso: string): string {
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return iso;
-  return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
-}
-
 /**
  * Client-side blog listing - hero, search, type/category filters, and a
  * sticky featured rail. Filter state is derived from props (URL) + local state.
@@ -94,10 +74,6 @@ export default function BlogListing({
   const [categoryFilter, setCategoryFilter] = useState<
     PostCategory | undefined
   >(initialCategory);
-
-  useEffect(() => {
-    setQuery(initialQuery ?? "");
-  }, [initialQuery]);
 
   const types = useMemo(
     () => Array.from(new Set(posts.map((p) => p.type))),
