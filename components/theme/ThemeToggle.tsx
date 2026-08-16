@@ -1,23 +1,38 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
+
+const STORAGE_KEY = "ossium-theme";
+
+function subscribe(callback: () => void) {
+  window.addEventListener("storage", callback);
+  return () => window.removeEventListener("storage", callback);
+}
+
+function getSnapshot() {
+  return localStorage.getItem(STORAGE_KEY);
+}
+
+function getServerSnapshot() {
+  return null;
+}
 
 /** Light/dark toggle (placed inside the navbar); persists under `ossium-theme`. */
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(true);
-
-  useEffect(() => {
-    if (typeof localStorage !== "undefined") {
-      setIsDark(localStorage.getItem("ossium-theme") !== "light");
-    }
-  }, []);
+  const stored = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
+  );
+  const isDark = stored !== "light";
 
   const toggle = () => {
     const next = !isDark;
-    setIsDark(next);
     document.documentElement.classList.toggle("dark", next);
-    localStorage.setItem("ossium-theme", next ? "dark" : "light");
+    localStorage.setItem(STORAGE_KEY, next ? "dark" : "light");
+    // Trigger re-render for other listeners
+    window.dispatchEvent(new StorageEvent("storage", { key: STORAGE_KEY }));
   };
 
   return (

@@ -13,6 +13,7 @@ import {
   TYPE_LABELS,
   CATEGORY_LABELS,
 } from "@/lib/content";
+import { formatDate } from "@/lib/utils";
 import { APP_URL, APP_CONFIG, SOURCE_EDIT_BASE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { SECTION_CONTAINER_CLASS } from "@/components/ui/Container";
@@ -89,28 +90,6 @@ export async function generateMetadata({
       },
     },
   };
-}
-
-const MONTHS = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-] as const;
-
-/** Locale-independent so SSR and client HTML match. */
-function formatDate(iso: string): string {
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return iso;
-  return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
 }
 
 /** Full article page - cover, prose body, tags, share, and related posts. */
@@ -272,12 +251,18 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </div>
               )}
               <div className="flex flex-col">
-                <Link
-                  href={post.authorUrl!}
-                  className="text-[14px] font-semibold text-neutral-900 transition-colors hover:text-neutral-700 hover:underline dark:text-neutral-200 dark:hover:text-neutral-100"
-                >
-                  {post.author}
-                </Link>
+                {post.authorUrl ? (
+                  <Link
+                    href={post.authorUrl}
+                    className="text-[14px] font-semibold text-neutral-900 transition-colors hover:text-neutral-700 hover:underline dark:text-neutral-200 dark:hover:text-neutral-100"
+                  >
+                    {post.author}
+                  </Link>
+                ) : (
+                  <span className="text-[14px] font-semibold text-neutral-900 dark:text-neutral-200">
+                    {post.author}
+                  </span>
+                )}
                 <span className="flex items-center gap-2 text-[12.5px] text-neutral-500">
                   <time dateTime={post.publishedAt}>
                     {formatDate(post.publishedAt)}

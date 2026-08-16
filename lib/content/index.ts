@@ -5,6 +5,9 @@ import type { Post, PostCategory, PostMeta, PostType } from "./types";
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "posts");
 
+const CATEGORY_MATCH_WEIGHT = 3;
+const TYPE_MATCH_WEIGHT = 1;
+
 function listMarkdownFiles(): string[] {
   if (!fs.existsSync(CONTENT_DIR)) return [];
   return fs
@@ -77,8 +80,8 @@ export function getRelatedPosts(slug: string, limit = 3): PostMeta[] {
     .filter((p) => p.slug !== slug)
     .map((p) => {
       let score = 0;
-      if (p.category === current.category) score += 3;
-      if (p.type === current.type) score += 1;
+      if (p.category === current.category) score += CATEGORY_MATCH_WEIGHT;
+      if (p.type === current.type) score += TYPE_MATCH_WEIGHT;
       const shared = p.tags.filter((t) => current.tags.includes(t)).length;
       score += shared;
       return { post: p, score };
@@ -95,4 +98,6 @@ export {
   POST_CATEGORIES,
   TYPE_LABELS,
   CATEGORY_LABELS,
+  isPostType,
+  isPostCategory,
 } from "./types";
