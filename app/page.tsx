@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import {
-  getPostMetaList,
-  type PostType,
-  type PostCategory,
-} from "@/lib/content";
+import { getPostMetaList, isPostType, isPostCategory } from "@/lib/content";
+import type { PostType, PostCategory } from "@/lib/content";
 import { APP_URL } from "@/lib/constants";
 import BlogListing from "./BlogListing";
 
@@ -68,8 +65,14 @@ interface BlogPageProps {
 /** Blog listing page - feeds all post metadata to the client-side listing. */
 export default async function BlogPage({ searchParams }: BlogPageProps) {
   const params = await searchParams;
-  const typeFilter = params.type as PostType | undefined;
-  const categoryFilter = params.category as PostCategory | undefined;
+  const rawType = params.type;
+  const rawCategory = params.category;
+  const typeFilter: PostType | undefined =
+    typeof rawType === "string" && isPostType(rawType) ? rawType : undefined;
+  const categoryFilter: PostCategory | undefined =
+    typeof rawCategory === "string" && isPostCategory(rawCategory)
+      ? rawCategory
+      : undefined;
   const query = params.q;
 
   const all = getPostMetaList();
@@ -131,6 +134,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
       <BlogListing
+        key={`${typeFilter ?? ""}-${categoryFilter ?? ""}-${query ?? ""}`}
         posts={all}
         initialType={typeFilter}
         initialCategory={categoryFilter}

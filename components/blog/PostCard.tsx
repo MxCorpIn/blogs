@@ -3,31 +3,10 @@ import Link from "next/link";
 import { Clock, ArrowUpRight } from "lucide-react";
 import type { PostMeta } from "@/lib/content/types";
 import { CATEGORY_LABELS, TYPE_LABELS } from "@/lib/content/types";
+import { formatDate } from "@/lib/utils";
 
 interface PostCardProps {
   post: PostMeta;
-}
-
-const MONTHS = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-] as const;
-
-/** Locale-independent so SSR and client HTML match. */
-function formatDate(iso: string): string {
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return iso;
-  return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
 }
 
 /** Listing card linking to a post - type/category badges, title, meta, and thumbnail. */
