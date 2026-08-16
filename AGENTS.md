@@ -69,18 +69,23 @@ app/                  # Next.js App Router pages, layouts, API routes, SEO files
   sitemap.ts          # Auto-generated sitemap
   robots.ts           # Auto-generated robots.txt
 components/
-  blog/               # PostCard, MarkdownBody, ShareButton
+  blog/               # PostCard, MarkdownBody (client fallback), ShareButton
   landing/            # Navbar, Footer, DashedFrame
   theme/              # ThemeToggle (light/dark, persisted)
   ui/                 # Container, SearchOverlay
 content/posts/        # Markdown blog posts with YAML frontmatter
 lib/
   content/            # Content pipeline: load, parse, related posts, types
+  content/markdown.ts # Server-side markdown renderer (unified/remark/rehype)
   markdown/           # Directives plugin: :::gallery + preprocessor (directives.ts)
   constants.ts        # APP_URL, APP_CONFIG, SOURCE_EDIT_BASE
   utils.ts            # cn() classname helper
 public/               # Static assets (logos, demo images, llms.txt)
 ```
+
+### Rendering Pipeline
+
+Blog post markdown is rendered **server-side at build time** (SSG) using the unified/remark/rehype pipeline in `lib/content/markdown.ts`. The generated HTML is injected via `dangerouslySetInnerHTML` in `[slug]/page.tsx`. `components/blog/MarkdownBody.tsx` is kept as a client-side fallback but is not currently used by the main page.
 
 ## Content Guidelines
 
