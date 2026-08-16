@@ -209,3 +209,35 @@ summary,
 label[for] {
   cursor: pointer;
 }
+
+/* Galleries — responsive image grids from :::gallery directives */
+.blog-prose .gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 32px 0;
+}
+.blog-prose .gallery > p {
+  display: contents;
+}
+.blog-prose .gallery > p > span {
+  margin: 0;
+}
+.blog-prose .gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+}
+@media (min-width: 641px) {
+  .blog-prose .gallery[data-columns="2"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .blog-prose .gallery[data-columns="3"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .blog-prose .gallery[data-columns="4"] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
