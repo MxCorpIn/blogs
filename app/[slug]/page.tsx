@@ -92,6 +92,10 @@ export async function generateMetadata({
   };
 }
 
+function safeJsonLd(obj: object): string {
+  return JSON.stringify(obj).replace(/</g, "\\u003c");
+}
+
 /** Full article page - cover, prose body, tags, share, and related posts. */
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
@@ -177,16 +181,16 @@ export default async function BlogPostPage({ params }: PageProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(articleJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbJsonLd) }}
       />
       {faqJsonLd && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: safeJsonLd(faqJsonLd) }}
         />
       )}
 

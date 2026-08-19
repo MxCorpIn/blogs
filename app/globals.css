@@ -529,11 +529,9 @@ label[for] {
   border: 1px solid #e5e7eb;
   background: #f9fafb;
 }
-@media (prefers-color-scheme: dark) {
-  .blog-prose .gallery > p > span {
-    border-color: #262626;
-    background: #121314;
-  }
+.dark .blog-prose .gallery > p > span {
+  border-color: #262626;
+  background: #121314;
 }
 .blog-prose .gallery img {
   display: block;
@@ -549,11 +547,9 @@ label[for] {
   color: #737373;
   border-top: 1px solid #e5e7eb;
 }
-@media (prefers-color-scheme: dark) {
-  .blog-prose .gallery > p > span > span {
-    color: #a3a3a3;
-    border-color: #262626;
-  }
+.dark .blog-prose .gallery > p > span > span {
+  color: #a3a3a3;
+  border-color: #262626;
 }
 @media (min-width: 641px) {
   .blog-prose .gallery[data-columns="2"] {

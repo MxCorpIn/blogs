@@ -17,6 +17,7 @@ export async function GET() {
   const posts = getAllPosts();
 
   const items = posts
+    .filter((post) => !Number.isNaN(new Date(post.publishedAt).getTime()))
     .map((post) => {
       const link = `${APP_URL}/${post.slug}`;
       const pubDate = new Date(post.publishedAt).toUTCString();

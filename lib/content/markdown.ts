@@ -140,6 +140,10 @@ function wrapGalleryImage(img: HElement): HElement {
 function fixExternalLink(a: HElement): void {
   const href = a.properties.href;
   if (typeof href !== "string") return;
+  if (/^javascript:/i.test(href)) {
+    a.properties.href = "";
+    return;
+  }
   const isInternal = href.startsWith("/") && !href.startsWith("//");
   if (!isInternal) {
     a.properties.target = "_blank";
@@ -196,12 +200,13 @@ const processor = unified()
   .use(remarkGfm)
   .use(remarkDirective)
   .use(remarkDirectives)
-  .use(remarkRehype, { allowDangerousHtml: true })
+  .use(remarkRehype, { allowDangerousHtml: false })
   .use(rehypeHighlight)
   .use(rehypePostProcess)
-  .use(rehypeStringify, { allowDangerousHtml: true });
+  .use(rehypeStringify, { allowDangerousHtml: false });
 
 const htmlCache = new Map<string, string>();
+const CACHE_MAX = 200;
 
 /** Render a Markdown post body to static HTML (server-side only). */
 export function renderMarkdownToHtml(markdown: string): string {
@@ -210,6 +215,7 @@ export function renderMarkdownToHtml(markdown: string): string {
   if (cached) return cached;
   const file = processor.processSync(source);
   const html = String(file);
+  if (htmlCache.size >= CACHE_MAX) htmlCache.clear();
   htmlCache.set(source, html);
   return html;
 }
