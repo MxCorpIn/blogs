@@ -75,6 +75,12 @@ export default function BlogListing({
     PostCategory | undefined
   >(initialCategory);
 
+  const [prevInitialQuery, setPrevInitialQuery] = useState(initialQuery);
+  if (initialQuery !== prevInitialQuery) {
+    setPrevInitialQuery(initialQuery);
+    setQuery(initialQuery ?? "");
+  }
+
   const types = useMemo(
     () => Array.from(new Set(posts.map((p) => p.type))),
     [posts],

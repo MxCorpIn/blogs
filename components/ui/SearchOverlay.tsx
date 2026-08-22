@@ -37,7 +37,8 @@ export default function SearchOverlay() {
     try {
       const res = await fetch("/api/search");
       if (!res.ok) return;
-      setPosts(await res.json());
+      const data = await res.json();
+      if (Array.isArray(data)) setPosts(data);
     } catch {
       // Offline / unavailable - overlay shows an empty list.
     }

@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Clock, Coffee, Pencil, Tag } from "lucide-react";
-import MarkdownBody from "@/components/blog/MarkdownBody";
 import PostCard from "@/components/blog/PostCard";
 import ShareButton from "@/components/blog/ShareButton";
 import {
@@ -14,6 +13,7 @@ import {
   CATEGORY_LABELS,
 } from "@/lib/content";
 import { formatDate } from "@/lib/utils";
+import { renderMarkdownToHtml } from "@/lib/content/markdown";
 import { APP_URL, APP_CONFIG, SOURCE_EDIT_BASE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { SECTION_CONTAINER_CLASS } from "@/components/ui/Container";
@@ -90,6 +90,10 @@ export async function generateMetadata({
       },
     },
   };
+}
+
+function safeJsonLd(obj: object): string {
+  return JSON.stringify(obj).replace(/</g, "\\u003c");
 }
 
 /** Full article page - cover, prose body, tags, share, and related posts. */
@@ -177,16 +181,16 @@ export default async function BlogPostPage({ params }: PageProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(articleJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbJsonLd) }}
       />
       {faqJsonLd && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: safeJsonLd(faqJsonLd) }}
         />
       )}
 
@@ -302,7 +306,12 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         )}
 
-        <MarkdownBody content={post.content} />
+        <div
+          className="blog-prose text-neutral-600 dark:text-neutral-300 text-[16px] sm:text-[17px] leading-[1.75] tracking-[-0.003em]"
+          dangerouslySetInnerHTML={{
+            __html: renderMarkdownToHtml(post.content),
+          }}
+        />
 
         {post.tags.length > 0 && (
           <div className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-800">

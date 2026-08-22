@@ -4,8 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { cloneElement, isValidElement } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkDirective from "remark-directive";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
+import {
+  GALLERY_CLASS,
+  parseGalleryColumns,
+  preprocessDirectives,
+  remarkDirectives,
+} from "@/lib/markdown/directives";
 
 interface MarkdownBodyProps {
   content: string;
@@ -21,9 +28,35 @@ export default function MarkdownBody({ content }: MarkdownBodyProps) {
   return (
     <div className="blog-prose text-neutral-600 dark:text-neutral-300 text-[16px] sm:text-[17px] leading-[1.75] tracking-[-0.003em]">
       <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
+        remarkPlugins={[remarkGfm, remarkDirective, remarkDirectives]}
         rehypePlugins={[[rehypeHighlight, { ignoreMissing: true }]]}
         components={{
+          div: ({ node, children }) => {
+            const className = node?.properties.className;
+            const isGallery =
+              typeof className === "string" &&
+              className.split(/\s+/).includes(GALLERY_CLASS);
+            if (!isGallery) {
+              return (
+                <div
+                  className={
+                    typeof className === "string" ? className : undefined
+                  }
+                >
+                  {children}
+                </div>
+              );
+            }
+            const rawColumns = node?.properties["data-columns"];
+            const columns = parseGalleryColumns(
+              typeof rawColumns === "string" ? rawColumns : undefined,
+            );
+            return (
+              <div className={GALLERY_CLASS} data-columns={columns}>
+                {children}
+              </div>
+            );
+          },
           h1: ({ children }) => (
             <h1 className="font-display text-[26px] sm:text-[30px] font-semibold leading-[1.25] tracking-[-0.02em] text-neutral-900 dark:text-neutral-100 mt-10 mb-4">
               {children}
@@ -200,7 +233,7 @@ export default function MarkdownBody({ content }: MarkdownBodyProps) {
           ),
         }}
       >
-        {content}
+        {preprocessDirectives(content)}
       </ReactMarkdown>
     </div>
   );
