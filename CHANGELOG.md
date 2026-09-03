@@ -24,6 +24,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   (code); dark theme is now the default with a persisted light/dark toggle.
 - Homepage hero image swapped from a remote Midjourney-hosted asset to the
   self-hosted `public/demo/oss_landingpage.webp`.
+- README rewritten with a hero value proposition, "Why ossium?" comparison,
+  grouped features, screenshots, corrected tech stack (Next.js 16, unified
+  remark/rehype pipeline), and a scannable quickstart; covered by a
+  `lib/readme.test.ts` regression suite.
 
 ## [0.1.0]- 2026-07-11
 
