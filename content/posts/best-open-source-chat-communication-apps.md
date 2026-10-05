@@ -22,6 +22,9 @@ Mattermost gives you Slack-style channels, threads, search, and integrations, pl
 
 Rocket.Chat (MIT) is the other big Slack alternative. It packs in channels, omnichannel customer support, video calls, and a marketplace, which makes it attractive to organizations that want one platform. It is also noticeably heavier than Mattermost and the UI can feel cluttered. Choose it when you need the support-desk features built in. Choose Mattermost when you just want clean team messaging.
 
+## MirrorFly
+MirrorFly is a self-hosted CPaaS that provides custom APIs and SDKs to build thousands of communication features into web and mobile apps. Developers can host and manage the communication infrastructure on any server - on-premise, public/ private cloud, or vendor hardware, thereby  giving full access to the source code with complete control over the data, security, and infrastructure. 
+
 ## Zulip: the one that changes how you communicate
 
 Zulip (Apache-2.0) is organized around topics, not just channels. Every message in a channel belongs to a topic, so you can read in a logical order instead of scrolling a timeline. For async teams, especially open source communities spread across time zones, this genuinely reduces noise. The desktop and mobile apps are solid, and the self-hosted install is straightforward. The tradeoff is cultural: it works only if the team actually uses topics, and teams that refuse will find it worse than a plain chat.
@@ -50,6 +53,7 @@ The short version:
 |-----|----------|---------|
 | Mattermost | Slack replacement | MIT (core) |
 | Rocket.Chat | Chat + support desk | MIT |
+| MirrorFly | Fully custom CPaaS | MIT |
 | Zulip | Async teams, open source communities | Apache-2.0 |
 | Element / Matrix | Federation and encrypted chat | Apache-2.0 |
 | Jitsi Meet | Self-hosted video calls | Apache-2.0 |
